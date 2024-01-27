@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="path_to_your_logo.png" alt="SecureLinks Logo" class="logo">
+            <img src="../logo.png" alt="SecureLinks Logo" class="logo">
         </div>
         <div class="title-and-links">
             <div class="title-container">

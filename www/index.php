@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="path_to_your_logo.png" alt="SecureLinks Logo" class="logo">
+            <img src="logo.png" alt="SecureLinks Logo" class="logo">
         </div>
         <div class="title-and-links">
             <div class="title-container">
@@ -17,7 +17,7 @@
             </div>
             <nav class="nav-links">
                 <ul>
-                    <li class="nav-item"><a href="index.html" class="nav-link">Page d'accueil</a></li>
+                    <li class="nav-item"><a href="index.php" class="nav-link">Page d'accueil</a></li>
                     <li class="nav-item"><a href="src\tarifs.php" class="nav-link">Tarifs</a></li>
                     <li class="nav-item"><a href="src\exemple.php" class="nav-link">Exemple</a></li>
                     <li class="nav-item"><a href="src\contact.php" class="nav-link">Contact</a></li>
@@ -25,16 +25,23 @@
             </nav>
         </div>
     </header>
+
 	<div class="content-container">
-        <h1>Protection contre la censure et les bots sur Instagram</h1>
-        <p>Bienvenue sur SecureLinks! Nous vous aidons à protéger vos liens et contenus partagés sur les réseaux sociaux contre les bots et la censure.</p>
-        
-        <section class="explanation-section">
-            <h2>Comment ça marche ?</h2>
-            <p>Nous utilisons des redirections de liens et des images pour masquer votre contenu sensible des bots. C'est simple et efficace!</p>
+        <h1>Want to secure your website from bots?</h1>
+        <p>With us, don't get banned. Post your links with no stress.</p>
+
+        <section class="problem-section">
+            <h2>Le Problème avec les Bots Instagram</h2>
+            <p>Des bots Instagram analysent constamment les comptes. S'ils trouvent du contenu jugé inapproprié, ils peuvent entraîner une interdiction. Avec SecureLinks, tout est protégé et rien n'est détecté.</p>
+            <!-- Insérez ici l'image représentative des bots analysant les comptes -->
+            <img src="img.png" alt="Analyse des Bots Instagram" class="analysis-image">
+        </section>
+
+        <section class="solution-section">
+            <h2>Comment SecureLinks Protège Votre Contenu</h2>
+            <p>Nous sécurisons vos liens pour éviter toute détection par les bots. Créez votre site sécurisé avec vos liens protégés chez nous.</p>
             <!-- Exemple d'image montrant comment le service fonctionne -->
-            <img src="imageSecure.png" alt="Fonctionnement de SecureLinks" class="explanation-image">
-            <p class="image-caption">Exemple: Redirection de lien avec contenu protégé</p>
+            <img src="path_to_your_explanation_image.png" alt="Fonctionnement de SecureLinks" class="explanation-image">
         </section>
 
         <section class="steps-section">
@@ -45,9 +52,9 @@
                 <li>Votre contenu reste protégé et inaccessible aux bots!</li>
             </ol>
             <!-- Image illustrant les étapes -->
-            <img src="imageLienSecure.png" alt="Étapes SecureLinks" class="steps-image">
-            <p class="image-caption">Illustration des étapes</p>
+            <img src="path_to_your_steps_image.png" alt="Étapes SecureLinks" class="steps-image">
         </section>
     </div>
+    
 </body>
 </html>

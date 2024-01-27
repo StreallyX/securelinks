@@ -9,7 +9,7 @@
 <body>
     <header class="header">
         <div class="logo-container">
-            <img src="path_to_your_logo.png" alt="SecureLinks Logo" class="logo">
+            <img src="../logo.png" alt="SecureLinks Logo" class="logo">
         </div>
         <div class="title-and-links">
             <div class="title-container">
@@ -25,6 +25,27 @@
             </nav>
         </div>
     </header>
-    
+    <div class="tarifs-container">
+        <div class="tarif">
+            <h2>Create your website</h2>
+            <p class="price">499€</p>
+            <p>Get a fully secured website tailored to your needs.</p>
+            <a href="contact.php" class="tarif-button">En savoir plus</a>
+        </div>
+
+        <div class="tarif">
+            <h2>Keep your website protected</h2>
+            <p class="price">49€/month</p>
+            <p>Continuous protection and updates to keep your site safe.</p>
+            <a href="contact.php" class="tarif-button">En savoir plus</a>
+        </div>
+
+        <div class="tarif">
+            <h2>Increase the protection on your website</h2>
+            <p class="price">99€/month</p>
+            <p>Enhance your site's security with advanced features.</p>
+            <a href="contact.php" class="tarif-button">En savoir plus</a>
+        </div>
+    </div>
 </body>
 </html>
