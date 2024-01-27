@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="background-image" lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Profil</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="background-image">
     <header class="header">
         <div class="logo-container">
             <img src="../logo.png" alt="SecureLinks Logo" class="logo">
@@ -25,34 +25,18 @@
             </nav>
         </div>
     </header>
-    <div class="content">
-        <div class="form-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="firstname">First Name</label>
-                    <input type="text" id="firstname" name="firstname" required>
-                </div>
 
-                <div class="form-group">
-                    <label for="lastname">Last Name</label>
-                    <input type="text" id="lastname" name="lastname" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-
-                <div class="form-group">
-                    <label for="message">Your Request</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-
-                <button type="submit">Send</button>
-            </form>
-        </div>
+    <div class="profile-container">
+        <img src="fille.png" alt="Photo de Profil" class="profile-image">
+        <h1>TheGirl123</div> 
     </div>
-    <script src="script.js"></script>
+
+    <div class="links-container">
+        <a href="https://www.youtube.com" class="link-box" style="background-image: url('youtube.png');"></a>
+        <a href="https://www.twitch.tv" class="link-box" style="background-image: url('twitch.png');"></a>
+        <a href="https://onlyfans.com" class="link-box" style="background-image: url('onlyfans.png');"></a>
+        <a href="https://www.instagram.com" class="link-box" style="background-image: url('instagram.png');"></a>
+    </div>
     <footer class="footer">
         <div class="contact-info">
             <h3>Contact Us</h3>
@@ -70,4 +54,3 @@
     </footer>
 </body>
 </html>
-
