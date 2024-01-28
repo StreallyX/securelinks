@@ -8,9 +8,6 @@
 </head>
 <body class="background-image">
     <header class="header">
-        <div class="logo-container">
-            <img src="../logo.png" alt="SecureLinks Logo" class="logo">
-        </div>
         <div class="title-and-links">
             <div class="title-container">
                 <h1>SecureLinks</h1>
@@ -27,15 +24,15 @@
     </header>
 
     <div class="profile-container">
-        <img src="fille.png" alt="Photo de Profil" class="profile-image">
-        <h1>TheGirl123</div> 
+        <img src="image/fille.png" alt="Photo de Profil" class="profile-image">
+        <h1 class="colortextw">TheGirl123</div> 
     </div>
 
     <div class="links-container">
-        <a href="https://www.youtube.com" class="link-box" style="background-image: url('youtube.png');"></a>
-        <a href="https://www.twitch.tv" class="link-box" style="background-image: url('twitch.png');"></a>
-        <a href="https://onlyfans.com" class="link-box" style="background-image: url('onlyfans.png');"></a>
-        <a href="https://www.instagram.com" class="link-box" style="background-image: url('instagram.png');"></a>
+        <a href="https://www.youtube.com" class="link-box" style="background-image: url('image/youtube.png');"></a>
+        <a href="https://www.twitch.tv" class="link-box" style="background-image: url('image/twitch.png');"></a>
+        <a href="https://onlyfans.com" class="link-box" style="background-image: url('image/onlyfans.png');"></a>
+        <a href="https://www.instagram.com" class="link-box" style="background-image: url('image/instagram.png');"></a>
     </div>
     <footer class="footer">
         <div class="contact-info">

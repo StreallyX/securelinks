@@ -8,7 +8,7 @@
 </head>
 <body>
     <header class="header">
-
+        
         <div class="title-and-links">
             <div class="title-container">
                 <h1>SecureLinks</h1>
@@ -25,13 +25,9 @@
     </header>
     <div class="content">
         <div class="content-container">
-            <div class="intro">
-                <h1 class="colortext">Want to secure your website from bots?</h1>
-                <p class="marginbot">With us, avoid getting banned. Share your links with peace of mind.</p>
-                <img src="cad.png" alt="Cadenas" class="analysis-image">
-                <p>Protect your insta</p>
-                <img src="allmylink.png" alt="allmylink" class="analysis-image">
-            </div>
+            <h1 class="colortext">Want to secure your website from bots?</h1>
+            <p class="marginbot">With us, avoid getting banned. Share your links with peace of mind.</p>
+
             <section class="problem-section">
                 <h2>The Problem with Instagram Bots</h2>
                 <p>Instagram bots are constantly analyzing accounts. If they find inappropriate content, they can lead to a ban. With SecureLinks, everything is protected, and nothing is detected.</p>

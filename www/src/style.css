@@ -409,3 +409,216 @@ button:hover {
     padding: 20px;
     text-align: center;
 }
+
+.colortext{
+    color: red;
+}
+
+.colortextw{
+    color: white;
+}
+.marginbot{
+    margin-bottom: 100px;
+}
+
+.presentation {
+    margin: 0 auto;
+    width: 300px; /* Largeur du téléphone */
+    height: 600px; /* Hauteur du téléphone */
+    border-radius: 36px; /* Arrondir les coins pour ressembler à un téléphone */
+    border-color: black;
+    border-width: 15px;
+    border-style: solid; /* Style de bordure */
+    box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Ombre pour donner un effet 3D */
+    overflow: hidden; /* Empêcher le contenu de déborder */
+    position: relative; /* Pour positionner la caméra et le bouton */
+    background-color: red; /* Couleur de fond par défaut */
+    overflow-y: auto;
+    margin-bottom: 40px;
+}
+
+/* Pour simuler la caméra du téléphone */
+.presentation::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: black;
+    
+}
+
+
+.color-change-buttons button {
+    margin: 10px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.color-picker-container {
+    margin: 20px;
+    text-align: center;
+}
+
+#colorPicker {
+    width: 60px;
+    height: 40px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.link-add-container {
+    margin: 20px;
+    text-align: center;
+    width: 80%;
+    margin:auto 0;
+
+}
+
+#linkInput {
+    width: 70%;
+    padding: 10px;
+    margin-right: 5px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+}
+
+.btn-add {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+}
+
+.links-list {
+    margin: 20px;
+}
+
+.link-item {
+    margin:auto 0;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+}
+
+.btn-remove {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-left: 10px;
+}
+.createCenter {
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical (si nécessaire) */
+    height: 100%;            /* Hauteur définie si vous voulez un centrage vertical */
+    flex-direction: column;
+}
+
+.createCenter input{
+    
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.marge{
+    width:30%;
+    margin-bottom: 40px;
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+/* index 2 */
+:root {
+    --primary-color: #4a90e2; /* Bleu */
+    --secondary-color: #f76c6c; /* Rouge doux */
+    --background-color: #f4f4f4; /* Gris clair */
+    --text-color: #333; /* Gris foncé */
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background-color: white;
+    flex-direction: row;
+}
+
+.content h1 {
+    font-size: 2.5em;
+    color: var(--primary-color);
+}
+
+.content p {
+    font-size: 1.2em;
+    margin: 10px 0;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.image-container {
+    max-width: 500px;
+}
+
+.image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.analysis-image{
+    width: 70%;
+    height: 70%;
+    border-radius: 60px;
+    border-width: 10px;
+    border-color: black;
+    border:solid;
+}
+.intro {
+    margin-bottom: 20rem;
+}

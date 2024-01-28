@@ -8,9 +8,6 @@
 </head>
 <body>
     <header class="header">
-        <div class="logo-container">
-            <img src="../logo.png" alt="SecureLinks Logo" class="logo">
-        </div>
         <div class="title-and-links">
             <div class="title-container">
                 <h1>SecureLinks</h1>
