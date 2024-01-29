@@ -12,6 +12,8 @@
     background-color: red; /* Couleur de fond par défaut */
     overflow-y: auto;
     margin-bottom: 40px;
+    text-align: right;
+    align-self: center;
 }
 
 
@@ -168,7 +170,30 @@
      /* Ajout d'un espace entre les liens */
 }
 
-.flex-content{
+.flex-content {
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: -10rem;
+}
+
+.content-text {
+    text-align: center;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .flex-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .content-text {
+        text-align: center;
+    }
+
+    .presentation {
+        text-align: center;
+    }
 }

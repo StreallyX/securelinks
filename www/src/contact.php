@@ -8,20 +8,24 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
     <header class="header">
-        <div class="title-and-links">
-            <div class="title-container">
-                <h1>SecureLinks</h1>
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li class="nav-item"><a href="../index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="tarifs.php" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="example.php" class="nav-link">Example</a></li>
-                    <li class="nav-item"><a href="contact.php" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+            <nav role="navigation">
+            <h1 id="NavTitle">SecureLinks</h1>
+            <div id="menuToggle">
+              <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+            <ul id="menu">
+              <li><a href="../index.php">Home</a></li>
+              <li><a href="tarifs.php">Pricing</a></li>
+              <li><a href="example.php">Example</a></li>
+              <li><a href="contact.php">Contact</a></li>
+            </ul>
+           </div>
+          </nav>
+        
     </header>
     <div class="content">
         <div class="form-container">

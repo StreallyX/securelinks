@@ -5,23 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureLinks</title>
     <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css/index.css">
+    <script src="src/js/burgermenu.js"></script>
 </head>
 <body>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
     <header class="header">
-
-        <div class="title-and-links">
-            <div class="title-container">
-                <h1>SecureLinks</h1>
-            </div>
-            <nav class="nav-links">
-                <ul>
-                    <li class="nav-item"><a href="index.php" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="src/tarifs.php" class="nav-link">Pricing</a></li>
-                    <li class="nav-item"><a href="src/example.php" class="nav-link">Example</a></li>
-                    <li class="nav-item"><a href="src/contact.php" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+            <nav role="navigation">
+            <h1 id="NavTitle">SecureLinks</h1>
+            <div id="menuToggle">
+              <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+            <ul id="menu">
+              <li><a href="index.php">Home</a></li>
+              <li><a href="src/tarifs.php">Pricing</a></li>
+              <li><a href="src/example.php">Example</a></li>
+              <li><a href="src/contact.php">Contact</a></li>
+            </ul>
+           </div>
+          </nav>
+        
     </header>
     <div class="content">
         <div class="content-container">
