@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page de Profil</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/tarifs.css">
 </head>
 <body>
     <header class="header">
@@ -24,26 +25,53 @@
     </header>
     <div class="content">
         <div class="tarifs-container">
+            <!-- Free Website Option -->
             <div class="tarif">
-                <h2>Get a free website template</h2>
+                <h2>Get a Free Website</h2>
                 <p class="price">Free</p>
-                <p>Choose from a selection of free website templates.</p>
+                <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
+                <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
                 <a href="create2.php" class="tarif-button">Create</a>
             </div>
+
+            <!-- Website Security Option -->
             <div class="tarif">
-                <h2>Keep your website protected</h2>
-                <p class="price">19€/month</p>
-                <p>Continuous protection and updates to keep your site safe.</p>
-                <a href="contact.php" class="tarif-button">En savoir plus</a>
+                <h2>Secure Your Website</h2>
+                <p class="price">$7.99/month</p>
+                <p>Continuous protection for your website from insta bots, including regular updates and security monitoring.</p>
+                <p>Peace of mind with enhanced security, protection against instagram bann.</p>
+                <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
+
+            <!-- SEO Optimization Option -->
             <div class="tarif">
-                <h2>Create your website</h2>
-                <p class="price">1499€</p>
-                <p>Get a fully secured website tailored to your needs.</p>
-                <a href="contact.php" class="tarif-button">En savoir plus</a>
+                <h2>SEO Optimization</h2>
+                <p class="price">$2.99/month</p>
+                <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
+                <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
+                <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
-        </div>
+
+            <!-- Data Analysis Option -->
+            <div class="tarif">
+                <h2>Data Analysis</h2>
+                <p class="price">$4.99/month</p>
+                <p>Get detailed insights on your website's traffic and user behavior to make informed decisions.</p>
+                <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
+                <a href="contact.php" class="tarif-button">Learn More</a>
+            </div>
+
+            <!-- Advanced Website Customization Option -->
+            <div class="tarif">
+                <h2>Advanced Website Customization</h2>
+                <p class="price">$29.99/month</p>
+                <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
+                <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
+                <a href="contact.php" class="tarif-button">Learn More</a>
+            </div>
+         </div>
     </div>
+
     <footer class="footer">
         <div class="contact-info">
             <h3>Contact Us</h3>
