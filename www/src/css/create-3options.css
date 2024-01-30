@@ -1,0 +1,27 @@
+.tarifs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.tarif {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+#total-price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#conditions-check {
+    margin-top: 20px;
+}
+.content{
+
+    margin-bottom: 200px;
+}

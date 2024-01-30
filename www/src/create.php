@@ -33,6 +33,7 @@
             <div class="content-text">
                 <h1>Create your website</h1>
                 <p>Create your own website with our tools</p>
+                <a class="custom-button" href="create/create-1infos.php">Create</a>
             </div>
             <div class="content-text">
                 <div class="presentation">
@@ -49,8 +50,8 @@
                     <!-- Conteneur pour les liens -->
                     <div class="links-container">
                         <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée -->
-                        <a href="https://mym.fans/Anawhiterose" class="link-box" style="background-image: url('image/mym.png');"></a>
-                        <a href="https://onlyfans.com/ana.whiterose" class="link-box" style="background-image: url('image/onlyfans.png');"></a>
+                        <a href="create.php" class="link-box" style="background-image: url('image/mym.png');"></a>
+                        <a href="create.php" class="link-box" style="background-image: url('image/onlyfans.png');"></a>
                     </div>
                 </div>
             </div>
