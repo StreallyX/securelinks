@@ -28,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span></span>
                 <span></span>
             <ul id="menu">
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li><a href="../../index.php">Home</a></li>
+              <li><a href="../tarifs.php">Pricing</a></li>
+              <li><a href="../example.php">Example</a></li>
+              <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
           </nav>
@@ -49,13 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <h1>Send us your infos</h1>
             <form action="create-2website.php" method="post">
                 <label for="nom">Nom :</label><br>
-                <input type="text" id="nom" name="nom" value="<?php if($_SESSION['nom'] != ''){ echo $_SESSION['nom'];} ?>"><br><br>
+                <input type="text" id="nom" name="nom" value="<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>"><br><br>
 
-                <label for="nom">Prenom :</label><br>
-                <input type="text" id="prenom" name="prenom" value="<?php if($_SESSION['prenom'] != ''){ echo $_SESSION['prenom'];}?>"><br><br>
-                
+                <label for="prenom">Prénom :</label><br>
+                <input type="text" id="prenom" name="prenom" value="<?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : ''; ?>"><br><br>
+
                 <label for="email">Email :</label><br>
-                <input type="email" id="email" name="email" value="<?php if($_SESSION['email'] != ''){ echo $_SESSION['email'];}?>"><br><br>
+                <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>"><br><br>
                 
                 <input type="submit" value="Soumettre">
             </form>

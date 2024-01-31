@@ -1,3 +1,11 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les données soumises par le formulaire et les stocker dans la session
+    $_SESSION['option1'] = isset($_POST['seo_optimization']); // Si la case est cochée, option1 est true, sinon, option1 est false ou non défini.
+
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -19,10 +27,10 @@
                 <span></span>
                 <span></span>
             <ul id="menu">
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li><a href="../../index.php">Home</a></li>
+              <li><a href="../tarifs.php">Pricing</a></li>
+              <li><a href="../example.php">Example</a></li>
+              <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
           </nav>
@@ -30,63 +38,77 @@
         </header> 
       
         <div class="content">
-        <div class="tarifs-container">
-            <!-- Free Website Option -->
-            <div class="tarif">
-                <h2>Get a Free Website</h2>
-                <p class="price">$0.00</p>
-                <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
-                <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
-                <input type="checkbox" class="option" data-price="0">
-            </div>
+            <form action="create-4payment.php" method="post">
+                <div class="tarifs-container">
+                    <!-- Free Website Option -->
+                    <div class="tarif">
+                        <h2>Get a Free Website</h2>
+                        <p class="price">$0.00</p>
+                        <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
+                        <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
+                        <input type="checkbox" class="option" data-price="0" checked disabled>
+                    </div>
 
-            <!-- Website Security Option -->
-            <div class="tarif">
-                <h2>Secure Your Website</h2>
-                <p class="price">$7.99/month</p>
-                <p>Continuous protection for your website from insta bots, including regular updates and security monitoring.</p>
-                <p>Peace of mind with enhanced security, protection against Instagram bans.</p>
-                <input type="checkbox" class="option" data-price="7.99">
-            </div>
+                    <!-- Website Security Option -->
+                    <div class="tarif">
+                        <h2>Secure Your Website</h2>
+                        <p class="price">$7.99/month</p>
+                        <p>Continuous protection for your website from insta bots, including regular updates and security monitoring.</p>
+                        <p>Peace of mind with enhanced security, protection against Instagram bans.</p>
+                        <input type="checkbox" class="option" data-price="7.99" checked disabled>
+                    </div>
 
-            <!-- SEO Optimization Option -->
-            <div class="tarif">
-                <h2>SEO Optimization</h2>
-                <p class="price">$2.99/month</p>
-                <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
-                <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
-                <input type="checkbox" class="option" data-price="2.99">
-            </div>
+                    <!-- SEO Optimization Option -->
+                    <div class="tarif">
+                        <h2>SEO Optimization</h2>
+                        <p class="price">$2.99/month</p>
+                        <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
+                        <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
+                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99">
+                    </div>
 
-            <!-- Data Analysis Option -->
-            <div class="tarif">
-                <h2>Data Analysis</h2>
-                <p class="price">$4.99/month</p>
-                <p>Get detailed insights on your website's traffic and user behavior to make informed decisions.</p>
-                <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
-                <input type="checkbox" class="option" data-price="4.99">
-            </div>
+                    <!-- Data Analysis Option -->
+                    <div class="tarif">
+                        <h2>Data Analysis</h2>
+                        <p class="price">$4.99/month</p>
+                        <p>Get detailed insights on your website's traffic and user behavior to make informed decisions.</p>
+                        <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
+                        <input type="checkbox" id="data_analysis" name="data_analysis" class="option" data-price="4.99">
+                    </div>
 
-            <!-- Advanced Website Customization Option -->
-            <div class="tarif">
-                <h2>Advanced Website Customization</h2>
-                <p class="price">$29.99/month</p>
-                <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
-                <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
-                <input type="checkbox" class="option" data-price="29.99">
-            </div>
+                    <!-- Advanced Website Customization Option -->
+                    <div class="tarif">
+                        <h2>Advanced Website Customization</h2>
+                        <p class="price">$29.99/month</p>
+                        <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
+                        <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
+                        <input type="checkbox" id="advanced_website" name="advanced_website" class="option" data-price="29.99">
+                    </div>
+                </div>
+                <p>Total Price: <span id="total-price">$7.99</span></p>
+                <a href="#" id="openModal">Voir les Conditions Générales</a>
+
+                <!-- Modale pour les Conditions Générales -->
+                <div id="myModal" class="modal">
+                    <div class="modal-content">
+                        <span class="close-button" id="closeModal">&times;</span>
+                        <h2>Conditions Générales</h2>
+                        <!-- Ajoutez ici le contenu de vos conditions générales -->
+                        <p>Ceci sont les conditions générales de notre service.</p>
+                    </div>
+                </div>
+                <input type="checkbox" id="conditions-check"> I have read the terms and conditions
+            
+                <input type="submit" value="Next">
+            </form>
         </div>
-        <p>Total Price: <span id="total-price">$0.00</span></p>
-        <input type="checkbox" id="conditions-check"> I have read the terms and conditions
-        <button id="next-button" disabled>Next</button>
-    </div>
     <script>
         const checkboxes = document.querySelectorAll('.option');
         const totalPriceSpan = document.getElementById('total-price');
         const conditionsCheck = document.getElementById('conditions-check');
         const nextButton = document.getElementById('next-button');
 
-        let total = 0;
+        let total = 7.99;
 
         checkboxes.forEach(checkbox => {
             checkbox.addEventListener('change', () => {
@@ -103,6 +125,25 @@
 
         conditionsCheck.addEventListener('change', () => {
             nextButton.disabled = !conditionsCheck.checked || total === 0;
+        });
+        // JavaScript pour ouvrir et fermer la modale
+        const openModalButton = document.getElementById("openModal");
+        const closeModalButton = document.getElementById("closeModal");
+        const modal = document.getElementById("myModal");
+
+        openModalButton.addEventListener("click", function() {
+            modal.style.display = "block";
+        });
+
+        closeModalButton.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        // Fermer la modale si l'utilisateur clique en dehors de celle-ci
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
         });
     </script>
         

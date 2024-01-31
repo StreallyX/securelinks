@@ -1,7 +1,8 @@
 <?php
+session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['couleur'] = $_POST['nom'];
+    $_SESSION['nom'] = $_POST['nom'];
     $_SESSION['prenom'] = $_POST['prenom'];
     $_SESSION['email'] = $_POST['email'];
 }
@@ -27,15 +28,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <span></span>
                 <span></span>
             <ul id="menu">
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li><a href="../../index.php">Home</a></li>
+              <li><a href="../tarifs.php">Pricing</a></li>
+              <li><a href="../example.php">Example</a></li>
+              <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
           </nav>
         
         </header>
+            <div class="etapes">
+                <div class="etape"></div>
+                <div class="etape remplie"></div>
+                <div class="etape"></div>
+                <div class="etape"></div>
+                <div class="etape"></div>
+            </div>
             <div class="flex-content">
                 <div class="content-text">
                     <h1>Build your website</h1>
@@ -50,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <h2>Choose your color</h2>
                     <div class="color-picker-container">
-                        <input type="color" id="colorPicker" value="#ffffff">
+                        <input type="color" id="colorPicker" value="#1100FF">
                     </div>
                     <h2>Add your links</h2>
                     <div class="link-add-container">
@@ -64,6 +72,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <input type="text" id="userNameInput" placeholder="Insert your username">
                     <input type="text" id="userDescriptionInput" placeholder="Write whatever you want">
                     <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
+                    <form action="create-3options.php" method="post">
+                        <input type="submit" value="Next">
+                     </form>
                 </div>
                 <div class="content-text">
                 <div class="presentation">
@@ -80,8 +91,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <!-- Conteneur pour les liens -->
                         <div class="links-container">
                             <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée -->
-                            <a href="https://mym.fans/Anawhiterose" class="link-box" style="background-image: url('../image/links.png');"></a>
-                            <a href="https://onlyfans.com/ana.whiterose" class="link-box" style="background-image: url('../image/links.png');"></a>
+                            <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
+                            <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
                         </div>
                     </div>
                 </div>
@@ -90,9 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
         
-        <div class="createCenter">
-            <a class="marge" href="create3.php">Next</a>
-        </div>
+            
 
         <script>
             document.getElementById('colorPicker').addEventListener('input',function() {

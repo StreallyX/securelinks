@@ -1,3 +1,13 @@
+<?php
+session_start(); // Assurez-vous d'avoir démarré la session si ce n'est pas déjà fait.
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les données soumises par le formulaire et les stocker dans la session
+    $_SESSION['option1'] = isset($_POST['seo_optimization']) ? true : false;
+    $_SESSION['option2'] = isset($_POST['data_analysis']) ? true : false;
+    $_SESSION['option3'] = isset($_POST['advanced_website']) ? true : false;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -18,17 +28,19 @@
                 <span></span>
                 <span></span>
             <ul id="menu">
-              <li><a href="../index.php">Home</a></li>
-              <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
-              <li><a href="contact.php">Contact</a></li>
+              <li><a href="../../index.php">Home</a></li>
+              <li><a href="../tarifs.php">Pricing</a></li>
+              <li><a href="../example.php">Example</a></li>
+              <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
           </nav>
         </header> 
         <!-- Content -->
 
-            
+            <p><?php echo $_SESSION['option1']?></p>
+            <?php var_dump($_POST); 
+            var_dump($_SESSION);?>
 
         <!-- Content -->
         <footer class="footer">
