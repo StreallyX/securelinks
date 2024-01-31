@@ -3,7 +3,7 @@ session_start();
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données soumises par le formulaire et les stocker dans la session
     $_SESSION['option1'] = isset($_POST['seo_optimization']); // Si la case est cochée, option1 est true, sinon, option1 est false ou non défini.
-
+    
 }
 ?>
 <!DOCTYPE html>
@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </header> 
       
         <div class="content">
-            <form action="create-4payment.php" method="post">
+            <form id="myForm" action="create-4payment.php" method="post">
                 <div class="tarifs-container">
                     <!-- Free Website Option -->
                     <div class="tarif">
@@ -58,13 +58,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="checkbox" class="option" data-price="7.99" checked disabled>
                     </div>
 
+                    <?php
+                    // Vérifiez la valeur de $_SESSION['option1']
+                    if ($_SESSION['option1'] === true) {
+                        $checked = 'checked="checked"';
+                    } else {
+                        $checked = ''; // Laissez l'attribut 'checked' vide sinon
+                    }
+                    ?>
+
                     <!-- SEO Optimization Option -->
                     <div class="tarif">
                         <h2>SEO Optimization</h2>
+                        <?php var_dump($_SESSION);?>
                         <p class="price">$2.99/month</p>
                         <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
                         <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
-                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99">
+                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99" <?php echo $checked; ?>>
                     </div>
 
                     <!-- Data Analysis Option -->
@@ -144,6 +154,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if (event.target == modal) {
                 modal.style.display = "none";
             }
+        });
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+        if (!document.getElementById("conditions-check").checked) {
+            event.preventDefault(); // Empêche l'envoi du formulaire
+            alert("Vous devez cocher la case pour accepter les conditions.");
+        }
         });
     </script>
         

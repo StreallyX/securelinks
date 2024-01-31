@@ -46,15 +46,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="etape"></div>
                 <div class="etape"></div>
             </div>
-            <h1>Send us your infos</h1>
+            <h1>Your informations</h1>
             <form action="create-2website.php" method="post">
-                <label for="nom">Nom :</label><br>
+                <label for="nom">Name</label><br>
                 <input type="text" id="nom" name="nom" value="<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>"><br><br>
 
-                <label for="prenom">Prénom :</label><br>
+                <label for="prenom">First Name</label><br>
                 <input type="text" id="prenom" name="prenom" value="<?php echo isset($_SESSION['prenom']) ? $_SESSION['prenom'] : ''; ?>"><br><br>
 
-                <label for="email">Email :</label><br>
+                <label for="email">Mail</label><br>
                 <input type="email" id="email" name="email" value="<?php echo isset($_SESSION['email']) ? $_SESSION['email'] : ''; ?>"><br><br>
                 
                 <input type="submit" value="Soumettre">

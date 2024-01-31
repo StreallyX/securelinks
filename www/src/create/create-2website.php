@@ -50,11 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <h2>Choose your profil image</h2>
                     
-                    <form id="uploadForm" enctype="multipart/form-data">
-                        <label for="profileImage">Choose your profile image:</label>
-                        <input type="file" id="profileImage" name="profileImage" accept="image/*">
-                        <button type="submit">Upload</button>
-                    </form>
+                    
 
                     <h2>Choose your color</h2>
                     <div class="color-picker-container">
@@ -69,8 +65,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <!-- Les liens ajoutés apparaîtront ici -->
                     </div>
                     <h2>Insert your infos</h2>
-                    <input type="text" id="userNameInput" placeholder="Insert your username">
-                    <input type="text" id="userDescriptionInput" placeholder="Write whatever you want">
+                    <input type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
+                    <input type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
                     <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
                     <form action="create-3options.php" method="post">
                         <input type="submit" value="Next">
@@ -85,7 +81,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                             <h1 class="colortextw">@the.girl1234</h1> 
                             <!-- Nom d'utilisateur affiché comme un titre -->
                             <p class="colortextw">SecureLinks</p>
-                            <!-- Description ou slogan sous le nom d'utilisateur -->
+                            <!-- Description ou slogan sous le nom d'utilisateur --> 
                         </div>
 
                         <!-- Conteneur pour les liens -->
@@ -98,11 +94,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
             </div>
-
-
-        
-            
-
         <script>
             document.getElementById('colorPicker').addEventListener('input',function() {
             document.querySelector('.presentation').style.backgroundColor = this.value;
@@ -135,38 +126,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     alert("Veuillez entrer un lien.");
                 }
             }
-            function updateProfile() {
-                var nameInput = document.getElementById('userNameInput');
-                var descriptionInput = document.getElementById('userDescriptionInput');
-                var profileContainer = document.querySelector('.profile-container'); // Assurez-vous que cette classe correspond bien à votre HTML
+            function updateUserInfo() {
+            // Récupérer les valeurs des champs de saisie
+            var userName = document.getElementById('userNameInput').value;
+            var userDescription = document.getElementById('userDescriptionInput').value;
 
-                var nameElement = profileContainer.querySelector('h1.colortextw'); // Sélectionnez le h1 avec la classe 'colortextw'
-                var descriptionElement = profileContainer.querySelector('p.colortextw'); // Sélectionnez le p avec la classe 'colortextw'
-
-                if (nameElement) {
-                    nameElement.textContent = nameInput.value;
-                }
-                if (descriptionElement) {
-                    descriptionElement.textContent = descriptionInput.value;
-                }
-             }
-             document.getElementById('uploadForm').addEventListener('submit', function(e) {
-                e.preventDefault();
-
-                var file = document.getElementById('profileImage').files[0];
-                var reader = new FileReader();
-
-                reader.onload = function(e) {
-                    var img = document.createElement('img');
-                    img.src = e.target.result;
-                    document.querySelector('.presentation').innerHTML = '';
-                    document.querySelector('.presentation').appendChild(img);
-                };
-
-                reader.readAsDataURL(file);
-
-                // Code pour envoyer l'image au serveur ici
-            });
+            // Mettre à jour le contenu des éléments h1 et p
+            document.getElementById('userNameDisplay').innerHTML = userName;
+            document.getElementById('userDescriptionDisplay').innerHTML = userDescription;
+        }
 
 
         </script>
