@@ -1,3 +1,6 @@
+<?php
+session_start(); // Démarrer la session
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,7 +31,9 @@
         </header> 
         <!-- Content -->
 
-
+        <p>TEST</p>
+        <?php var_dump($_SESSION); ?>
+        <p><?php echo $_SESSION['nom'];?></p>
         <!-- Content -->
         <footer class="footer">
             <div class="contact-info">

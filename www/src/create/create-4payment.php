@@ -41,6 +41,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p><?php echo $_SESSION['option1']?></p>
             <?php var_dump($_POST); 
             var_dump($_SESSION);?>
+            <!-- https://buy.stripe.com/8wMcOggIt96H8gMeUU -->
+            <?php
+                if ($_SESSION['option1'] === false && $_SESSION['option2'] === false && $_SESSION['option3'] === false) {
+                    header('Location: https://buy.stripe.com/4gwbKc63P96H7cI8wx');
+                    exit;
+                }
+            ?>
 
         <!-- Content -->
         <footer class="footer">
