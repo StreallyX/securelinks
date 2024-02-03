@@ -58,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p>Peace of mind with enhanced security, protection against Instagram bans.</p>
                         <input type="checkbox" class="option" data-price="7.99" checked disabled>
                     </div>
+                    
 
                     <?php
                     // Vérifiez la valeur de $_SESSION['option1']
@@ -69,16 +70,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     ?>
 
                     <!-- SEO Optimization Option -->
+                    <!--
                     <div class="tarif">
                         <h2>SEO Optimization</h2>
-                        <?php var_dump($_SESSION);?>
+                        <?php // var_dump($_SESSION);?>
                         <p class="price">$2.99/month</p>
                         <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
                         <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
-                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99" <?php echo $checked; ?>>
+                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99" <?php  // echo $checked; ?>>
                     </div>
+                    -->
 
                     <!-- Data Analysis Option -->
+                    <!--
                     <div class="tarif">
                         <h2>Data Analysis</h2>
                         <p class="price">$4.99/month</p>
@@ -86,31 +90,42 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
                         <input type="checkbox" id="data_analysis" name="data_analysis" class="option" data-price="4.99">
                     </div>
+                    -->
 
                     <!-- Advanced Website Customization Option -->
-                    <div class="tarif">
-                        <h2>Advanced Website Customization</h2>
-                        <p class="price">$29.99/month</p>
-                        <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
-                        <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
-                        <input type="checkbox" id="advanced_website" name="advanced_website" class="option" data-price="29.99">
-                    </div>
-                </div>
-                <p>Total Price: <span id="total-price">$7.99</span></p>
-                <a href="#" id="openModal">Voir les Conditions Générales</a>
+                    
+                   
 
-                <!-- Modale pour les Conditions Générales -->
-                <div id="myModal" class="modal">
-                    <div class="modal-content">
-                        <span class="close-button" id="closeModal">&times;</span>
-                        <h2>Conditions Générales</h2>
-                        <!-- Ajoutez ici le contenu de vos conditions générales -->
-                        <p>Ceci sont les conditions générales de notre service.</p>
+                    <div class="tarif">
+                        <label id="pseudo-checkbox" class="pseudo-checkbox" data-price="29.99" >
+                            <input type="checkbox" id="advanced_website" name="advanced_website" class="option visually-hidden" data-price="29.99">
+                            
+                            <h2>Advanced Website Customization</h2>
+                            <p class="price">$29.99/month</p>
+                            <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
+                            <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
+                        </label>
                     </div>
+
+
+
+                
+                    <p>Total Price: <span id="total-price">$7.99</span></p>
+                    <a href="#" id="openModal">Voir les Conditions Générales</a>
+
+                    <!-- Modale pour les Conditions Générales -->
+                    <div id="myModal" class="modal">
+                        <div class="modal-content">
+                            <span class="close-button" id="closeModal">&times;</span>
+                            <h2>Conditions Générales</h2>
+                            <!-- Ajoutez ici le contenu de vos conditions générales -->
+                            <p>Ceci sont les conditions générales de notre service.</p>
+                        </div>
+                    </div>
+                    <input type="checkbox" id="conditions-check"> I have read the terms and conditions
+                
+                    <input type="submit" value="Next">
                 </div>
-                <input type="checkbox" id="conditions-check"> I have read the terms and conditions
-            
-                <input type="submit" value="Next">
             </form>
         </div>
     <script>
@@ -121,22 +136,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         let total = 7.99;
 
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                const price = parseFloat(checkbox.getAttribute('data-price'));
-                if (checkbox.checked) {
-                    total += price;
-                } else {
-                    total -= price;
-                }
-                totalPriceSpan.textContent = `$${total.toFixed(2)}`;
-                nextButton.disabled = !conditionsCheck.checked || total === 0;
-            });
-        });
-
         conditionsCheck.addEventListener('change', () => {
             nextButton.disabled = !conditionsCheck.checked || total === 0;
         });
+
         // JavaScript pour ouvrir et fermer la modale
         const openModalButton = document.getElementById("openModal");
         const closeModalButton = document.getElementById("closeModal");
@@ -156,12 +159,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 modal.style.display = "none";
             }
         });
+
         document.getElementById("myForm").addEventListener("submit", function(event) {
-        if (!document.getElementById("conditions-check").checked) {
-            event.preventDefault(); // Empêche l'envoi du formulaire
-            alert("Vous devez cocher la case pour accepter les conditions.");
-        }
+            if (!document.getElementById("conditions-check").checked) {
+                event.preventDefault(); // Empêche l'envoi du formulaire
+                alert("Vous devez cocher la case pour accepter les conditions.");
+            }
         });
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+            if (!document.getElementById("conditions-check").checked) {
+                event.preventDefault(); // Empêche l'envoi du formulaire
+                alert("Vous devez cocher la case pour accepter les conditions.");
+            }
+        });
+
+        document.querySelectorAll('.pseudo-checkbox').forEach(item => {
+            item.addEventListener('click', function(event) {
+                event.stopPropagation(); // Empêche la propagation de l'événement aux éléments parents
+
+                const checkbox = this.querySelector('input[type="checkbox"]');
+                checkbox.checked = !checkbox.checked; // Toggle l'état de la checkbox
+
+                // Mise à jour du total
+                let price = parseFloat(checkbox.dataset.price);
+                total = checkbox.checked ? total + (price / 2) : total - (price / 2);
+                totalPriceSpan.textContent = `$${total.toFixed(2)}`;
+                // Marquer visuellement la sélection
+                this.classList.toggle('selected', checkbox.checked);
+            });
+        });
+
+
     </script>
         
         <footer class="footer">
