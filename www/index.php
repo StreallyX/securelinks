@@ -21,7 +21,7 @@
             <ul id="menu">
               <li><a href="index.php">Home</a></li>
               <li><a href="src/tarifs.php">Pricing</a></li>
-              <li><a href="src/example.php">Example</a></li>
+              <li><a href="src/create.php">Create</a></li>
               <li><a href="src/contact.php">Contact</a></li>
             </ul>
            </div>
@@ -31,7 +31,8 @@
     <div class="content">
         <div class="content-container">
             <div class="intro">
-                <h1 class="colortext">Want to secure your website from bots?</h1>
+                <h1>SecureLinks</h1>
+                <h2 class="colortext">Want to secure your website from bots?</h2>
                 <p class="marginbot">With us, avoid getting banned. Share your links with peace of mind.</p>
                 <img src="cad.png" alt="Cadenas" class="analysis-image">
                 <p>Protect your insta</p>
@@ -62,6 +63,7 @@
         </div>
     </div>
     <footer class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="contact-info">
             <h3>Contact Us</h3>
             <p>Email: securelinkspro@gmail.com</p>
@@ -70,9 +72,7 @@
         <div class="social-media">
             <h3>Follow Us</h3>
             <ul>
-                <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+                <li><a href="#" class="fa fa-instagram"></a></li>
             </ul>
         </div>
     </footer>

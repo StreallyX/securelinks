@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul id="menu">
               <li><a href="../../index.php">Home</a></li>
               <li><a href="../tarifs.php">Pricing</a></li>
-              <li><a href="../example.php">Example</a></li>
+              <li><a href="../create.php">Create</a></li>
               <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
@@ -46,29 +46,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="flex-content">
                 <div class="content-text">
-                    <h1>Build your website</h1>
-
-                    <h2>Choose your profil image</h2>
-                    
-                    
-
-                    <h2>Choose your color</h2>
-                    <div class="color-picker-container">
-                        <input type="color" id="colorPicker" value="#1100FF">
-                    </div>
-                    <h2>Add your links</h2>
-                    <div class="link-add-container">
-                        <input type="url" id="linkInput" placeholder="Entrez votre lien ici">
-                        <button onclick="addLink()" class="btn-add">+</button>
-                    </div>
-                    <div id="linksList" class="links-list">
-                        <!-- Les liens ajoutés apparaîtront ici -->
-                    </div>
-                    <h2>Insert your infos</h2>
-                    <input type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
-                    <input type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
-                    <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
                     <form action="create-3options.php" method="post">
+                        <h1>Build your website</h1>
+
+                        <h2>Choose your profil image</h2>
+                        
+                        <input type="file" id="imageInput" name="image" accept="image/*" />
+
+                        <h2>Choose your color</h2>
+                        <div class="color-picker-container">
+                            <input type="color" id="colorPicker" value="#1100FF">
+                        </div>
+
+
+                        <h2>Add your links</h2>
+                        <div class="link-add-container">
+                            <input type="url" id="linkInput" placeholder="Entrez votre lien ici">
+                            <button onclick="addLink()" class="btn-add">+</button>
+                        </div>
+                        
+                        <div id="linksList" class="links-list">
+                            <!-- Les liens ajoutés apparaîtront ici -->
+                        </div>
+
+                        <h2>Insert your infos</h2>
+                        <input type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
+                        <input type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
+                        <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
+
+                    
                         <input type="submit" value="Next">
                      </form>
                 </div>
@@ -135,6 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             document.getElementById('userNameDisplay').innerHTML = userName;
             document.getElementById('userDescriptionDisplay').innerHTML = userDescription;
         }
+
 
 
         </script>

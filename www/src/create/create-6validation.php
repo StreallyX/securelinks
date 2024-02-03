@@ -23,7 +23,7 @@ session_start(); // Démarrer la session
             <ul id="menu">
               <li><a href="../../index.php">Home</a></li>
               <li><a href="../tarifs.php">Pricing</a></li>
-              <li><a href="../example.php">Example</a></li>
+              <li><a href="../create.php">Create</a></li>
               <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>

@@ -20,7 +20,7 @@
             <ul id="menu">
               <li><a href="../index.php">Home</a></li>
               <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
+              <li><a href="create.php">Create</a></li>
               <li><a href="contact.php">Contact</a></li>
             </ul>
            </div>
@@ -35,7 +35,7 @@
                 <p class="price">Free</p>
                 <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
                 <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
-                <a href="create2.php" class="tarif-button">Create</a>
+                <a href="create.php" class="tarif-button">Create</a>
             </div>
 
             <!-- Website Security Option -->

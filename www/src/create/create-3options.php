@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données soumises par le formulaire et les stocker dans la session
     $_SESSION['option1'] = isset($_POST['seo_optimization']); // Si la case est cochée, option1 est true, sinon, option1 est false ou non défini.
@@ -29,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <ul id="menu">
               <li><a href="../../index.php">Home</a></li>
               <li><a href="../tarifs.php">Pricing</a></li>
-              <li><a href="../example.php">Example</a></li>
+              <li><a href="../create.php">Create</a></li>
               <li><a href="../contact.php">Contact</a></li>
             </ul>
            </div>
