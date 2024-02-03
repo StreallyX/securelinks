@@ -1,11 +1,5 @@
 <?php
 session_start(); // Démarrer la session
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['nom'] = $_POST['nom'];
-    $_SESSION['prenom'] = $_POST['prenom'];
-    $_SESSION['email'] = $_POST['email'];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <div class="etape"></div>
             </div>
             <h1>Your informations</h1>
-            <form action="create-2website.php" method="post">
+            <form action="create-3options.php" method="post">
                 <label for="nom">Name</label><br>
                 <input type="text" id="nom" name="nom" value="<?php echo isset($_SESSION['nom']) ? $_SESSION['nom'] : ''; ?>"><br><br>
 

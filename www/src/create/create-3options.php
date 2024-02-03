@@ -3,8 +3,9 @@ session_start();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['option1'] = isset($_POST['seo_optimization']); // Si la case est cochée, option1 est true, sinon, option1 est false ou non défini.
-    
+    $_SESSION['nom'] = $_POST['nom'];
+    $_SESSION['prenom'] = $_POST['prenom'];
+    $_SESSION['email'] = $_POST['email'];
 }
 ?>
 <!DOCTYPE html>
@@ -59,15 +60,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <input type="checkbox" class="option" data-price="7.99" checked disabled>
                     </div>
                     
-
-                    <?php
-                    // Vérifiez la valeur de $_SESSION['option1']
-                    if ($_SESSION['option1'] === true) {
-                        $checked = 'checked="checked"';
-                    } else {
-                        $checked = ''; // Laissez l'attribut 'checked' vide sinon
-                    }
-                    ?>
+                    <!--
+                    <div class="tarif">
+                        <label id="pseudo-checkbox" class="pseudo-checkbox" data-price="29.99" >
+                            <input type="checkbox" id="advanced_website" name="advanced_website" class="option visually-hidden" data-price="29.99">
+                            
+                            <h2>Advanced Website Customization</h2>
+                            <p class="price">$29.99/month</p>
+                            <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
+                            <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
+                        </label>
+                    </div>
+                    -->
 
                     <!-- SEO Optimization Option -->
                     <!--
@@ -94,22 +98,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                     <!-- Advanced Website Customization Option -->
                     
-                   
-
-                    <div class="tarif">
-                        <label id="pseudo-checkbox" class="pseudo-checkbox" data-price="29.99" >
-                            <input type="checkbox" id="advanced_website" name="advanced_website" class="option visually-hidden" data-price="29.99">
-                            
-                            <h2>Advanced Website Customization</h2>
-                            <p class="price">$29.99/month</p>
-                            <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
-                            <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
-                        </label>
-                    </div>
-
-
-
-                
                     <p>Total Price: <span id="total-price">$7.99</span></p>
                     <a href="#" id="openModal">Voir les Conditions Générales</a>
 

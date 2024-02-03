@@ -32,7 +32,6 @@ session_start(); // Démarrer la session
           </nav>
         </header> 
         <!-- Content -->
-        <button onclick="makePage()">click</button>
         
        
 

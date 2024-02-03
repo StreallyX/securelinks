@@ -1,12 +1,3 @@
-<?php
-session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['nom'] = $_POST['nom'];
-    $_SESSION['prenom'] = $_POST['prenom'];
-    $_SESSION['email'] = $_POST['email'];
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -46,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
             <div class="flex-content">
                 <div class="content-text">
-                    <form action="create-3options.php" method="post">
+                    <form action="create-1infos.php" method="post">
                         <h1>Build your website</h1>
 
                         <h2>Choose your profil image</h2>
@@ -62,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <h2>Add your links</h2>
                         <div class="link-add-container">
                             <input type="url" id="linkInput" placeholder="Entrez votre lien ici">
-                            <button onclick="addLink()" class="btn-add">+</button>
+                            <span onclick="addLink()" class="btn-add">+</span>
                         </div>
                         
                         <div id="linksList" class="links-list">

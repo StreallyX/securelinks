@@ -34,7 +34,7 @@
             <div class="content-text">
                 <h1>Create your website</h1>
                 <p>Create your own website with our tools</p>
-                <a class="custom-button" href="create/create-1infos.php">Create</a>
+                <a class="custom-button" href="create/create-2website.php">Create</a>
             </div>
             <div class="content-text">
                 <div class="presentation">
