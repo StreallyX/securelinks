@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureLinks</title>
     <link rel="stylesheet" href="src/css/global.css">
-    <link rel="stylesheet" href="src/css/index.css">
-    <script src="src/js/burgermenu.js"></script>
+    <link rel="stylesheet" href="src/css/index.css">             
 </head>
 <body>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">

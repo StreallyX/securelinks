@@ -8,6 +8,8 @@ session_start(); // Démarrer la session
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Page de Profil</title>
         <link rel="stylesheet" href="../css/global.css">
+        <script src="makePage.js"></script>
+
     </head>
     <body>
         <!-- <body> contient le contenu visible de votre page web -->
@@ -30,7 +32,9 @@ session_start(); // Démarrer la session
           </nav>
         </header> 
         <!-- Content -->
-
+        <button onclick="makePage()">click</button>
+        
+       
 
         <?php var_dump($_SESSION); ?>
  
