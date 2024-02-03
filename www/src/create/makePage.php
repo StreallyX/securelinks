@@ -8,12 +8,20 @@ $PHPcontent = "<!DOCTYPE html>
         <link rel=\"stylesheet\" href=\"style.css\">
     </head>
     <body class=\"background-image\">
-    <div class=\"profile-container\"><img src=\"image/profil.png\" alt=\"Photo de Profil\" class=\"profile-image\">
-    <h1 class=\"colortextw\">@ana.whiterose</h1>
-    <p class=\"colortextw\">My secret world ♥</p>
-    </div>
-    <div class=\"links-container\">
-    <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée --><a href=\"https://mym.fans/Anawhiterose\" class=\"link-box\" style=\"background-image: url('image/mym.png');\"></a><a href=\"https://onlyfans.com/ana.whiterose\" class=\"link-box\" style=\"background-image: url('image/onlyfans.png');\"></a></div><footer><!-- Le <footer> contient généralement des informations de contact, des droits d'auteur, etc. --><p class=\"footertext\" style=\"\">SecureLinks</p><!-- Ici, un simple texte \"SecureLinks\" est affiché --></footer></body></html>";
+        <div class=\"profile-container\">
+        <img src=\"image/profil.png\" alt=\"Photo de Profil\" class=\"profile-image\">
+        <h1 class=\"colortextw\">@ana.whiterose</h1>
+        <p class=\"colortextw\">My secret world ♥</p>
+        </div>
+        <div class=\"links-container\">
+            <a href=\"https://mym.fans/Anawhiterose\" class=\"link-box\" style=\"background-image: url('image/mym.png');\"></a>
+            <a href=\"https://onlyfans.com/ana.whiterose\" class=\"link-box\" style=\"background-image: url('image/onlyfans.png');\"></a>
+        </div>
+        <footer>
+            <p class=\"footertext\" style=\"\">SecureLinks</p>
+        </footer>
+    </body>
+</html>";
 $CSScontent = "html {
     height: 100%;
 }
