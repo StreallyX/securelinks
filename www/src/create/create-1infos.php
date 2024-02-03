@@ -1,11 +1,6 @@
 <?php
 session_start(); // Démarrer la session
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['nom'] = $_POST['nom'];
-    $_SESSION['prenom'] = $_POST['prenom'];
-    $_SESSION['email'] = $_POST['email'];
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
