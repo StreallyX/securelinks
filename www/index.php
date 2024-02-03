@@ -19,7 +19,7 @@
                 <span></span>
                 <span></span>
             <ul id="menu">
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index.php">HomeLess</a></li>
               <li><a href="src/tarifs.php">Pricing</a></li>
               <li><a href="src/create.php">Create</a></li>
               <li><a href="src/contact.php">Contact</a></li>
