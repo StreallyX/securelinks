@@ -29,7 +29,7 @@
     </header>
     <div class="content">
         <div class="form-container">
-            <form id="contactForm">
+            <form id="contactForm" action="sendcontact.php" method="post">
                 <div class="form-group">
                     <label for="firstname">First Name</label>
                     <input type="text" id="firstname" name="firstname" required>
@@ -54,6 +54,7 @@
             </form>
         </div>
     </div>
+ 
     <script src="script.js"></script>
     <footer class="footer">
         <div class="contact-info">
@@ -72,4 +73,3 @@
     </footer>
 </body>
 </html>
-
