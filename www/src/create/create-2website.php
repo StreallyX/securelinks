@@ -1,11 +1,5 @@
 <?php
 session_start();
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['nom'] = $_POST['nom'];
-    $_SESSION['prenom'] = $_POST['prenom'];
-    $_SESSION['email'] = $_POST['email'];
-}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,8 +55,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
                         <h2>Add your links</h2>
                         <div class="link-add-container">
-                            <input  name="linkInput"  type="url" id="linkInput" placeholder="Entrez votre lien ici">
-                            <button onclick="addLink()" class="btn-add">+</button>
+                            <input name="linkInput" type="url" id="linkInput" placeholder="Entrez votre lien ici">
+                            <button type="button" onclick="addLink()" class="btn-add">+</button>
                         </div>
                         
                         <div id="linksList" class="links-list">
@@ -115,15 +109,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     var linksList = document.getElementById('linksList');
                     var linkItem = document.createElement('div');
                     linkItem.classList.add('link-item');
-                    linkItem.textContent = link;
+
+                    var linkText = document.createElement('span');
+                    linkText.textContent = link;
+                    linkItem.appendChild(linkText);
+
+                    var hiddenInput = document.createElement('input');
+                    hiddenInput.setAttribute('type', 'hidden');
+                    hiddenInput.setAttribute('name', 'links[]'); // Important pour PHP
+                    hiddenInput.value = link;
 
                     var removeBtn = document.createElement('button');
                     removeBtn.textContent = '-';
                     removeBtn.classList.add('btn-remove');
+                    removeBtn.type = 'button'; // Pour éviter de soumettre le formulaire
                     removeBtn.onclick = function() {
                         linksList.removeChild(linkItem);
                     };
 
+                    linkItem.appendChild(hiddenInput);
                     linkItem.appendChild(removeBtn);
                     linksList.appendChild(linkItem);
 
@@ -132,6 +136,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     alert("Veuillez entrer un lien.");
                 }
             }
+
             function updateUserInfo() {
             // Récupérer les valeurs des champs de saisie
             var userName = document.getElementById('userNameInput').value;

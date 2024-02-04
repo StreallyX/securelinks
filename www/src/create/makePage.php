@@ -5,7 +5,13 @@ session_start(); // Démarrer la session
     $_SESSION['backgroundcolor'] = $_POST['colorPicker'];
     $_SESSION['userNameInput'] = $_POST['userNameInput'];
     $_SESSION['userDescriptionInput'] = $_POST['userDescriptionInput'];
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['links'])) {
+      // Traitement des liens
+      $_SESSION['links'] = $_POST['links'];
+      
+    }
 
+    var_dump($_SESSION['links']);
 $username = $_SESSION['userNameInput'];
 
 // Création du dossier au nom de la personne
