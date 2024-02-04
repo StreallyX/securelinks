@@ -1,5 +1,6 @@
 <?php
 session_start();
+$_SESSION['etape'] = 1;
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,7 +69,6 @@ session_start();
                         <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
                         <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
 
-                    
                         <input name="submit" type="submit" value="Next">
                      </form>
                 </div>

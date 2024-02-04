@@ -1,6 +1,8 @@
 <?php
 session_start(); // Démarrer la session
-
+if($_SERVER['REQUEST_METHOD'] != 'POST'){
+    header("Location: error.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

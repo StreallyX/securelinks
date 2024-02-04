@@ -1,11 +1,9 @@
 <?php
 session_start();
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérer les données soumises par le formulaire et les stocker dans la session
-    $_SESSION['option1'] = isset($_POST['seo_optimization']); // Si la case est cochée, option1 est true, sinon, option1 est false ou non défini.
-    
-}
+if($_SERVER['REQUEST_METHOD'] != 'POST'){
+    header("Location: error.php");
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -29,8 +29,8 @@
     </header>
     <div class="content">
         <div class="content-container">
-
-        
+            <h1>SecureLinks</h1>
+            <h2>Want to be protected from bann ?</h2>
         </div>
     </div>
     <footer class="footer">

@@ -1,6 +1,12 @@
 <?php
-// Récupération forms website
-session_start(); // Démarrer la session
+    // Récupération forms website
+    session_start(); // Démarrer la session
+    
+    if($_SERVER['REQUEST_METHOD'] != 'POST'){
+      header("Location: error.php");
+    }
+    $_SESSION['etape'] = 2;
+
     // Récupérer les données soumises par le formulaire et les stocker dans la session
     $_SESSION['backgroundcolor'] = $_POST['colorPicker'];
     $_SESSION['userNameInput'] = $_POST['userNameInput'];
@@ -8,7 +14,6 @@ session_start(); // Démarrer la session
     if ($_SERVER["REQUEST_METHOD"] == "POST" && !empty($_POST['links'])) {
       // Traitement des liens
       $_SESSION['links'] = $_POST['links'];
-      
     }
 
     var_dump($_SESSION['links']);
@@ -71,7 +76,6 @@ if ($uploadOk == 0) {
 
 
 $PHPcontent = "<!DOCTYPE html>
-
 <html lang=\"en\">
     <head>
         <meta charset=\"UTF-8\">
@@ -81,18 +85,26 @@ $PHPcontent = "<!DOCTYPE html>
     </head>
     <body class=\"background-image\">
         <div class=\"profile-container\">
-        <img src=\"".$newFileName."\" alt=\"Photo de Profil\" class=\"profile-image\">
-        <h1 class=\"colortextw\">".$_SESSION['userNameInput']."</h1>
-        <p class=\"colortextw\">".$_SESSION['userDescriptionInput']."</p>
+            <img src=\"" . $newFileName . "\" alt=\"Photo de Profil\" class=\"profile-image\">
+            <h1 class=\"colortextw\">" . $_SESSION['userNameInput'] . "</h1>
+            <p class=\"colortextw\">" . $_SESSION['userDescriptionInput'] . "</p>
         </div>
-        <div class=\"links-container\">
-           
-        </div>
+        <div class=\"links-container\">";
+
+if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
+    foreach ($_SESSION['links'] as $link) {
+        $PHPcontent .= "<a href=\"$link\">$link</a><br>";
+    }
+}
+
+$PHPcontent .= "</div>
         <footer>
-            <p class=\"footertext\" style=\"\">SecureLinks</p>
+            <p class=\"footertext\">SecureLinks</p>
         </footer>
     </body>
 </html>";
+
+
 $CSScontent = "html {
     height: 100%;
 }

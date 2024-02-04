@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -9,15 +8,13 @@
     </head>
     <body class="background-image">
         <div class="profile-container">
-        <img src="profilepic.png" alt="Photo de Profil" class="profile-image">
-        <h1 class="colortextw">@the.girl123456</h1>
-        <p class="colortextw">SecureLinks56</p>
+            <img src="profilepic.png" alt="Photo de Profil" class="profile-image">
+            <h1 class="colortextw">er</h1>
+            <p class="colortextw">er</p>
         </div>
-        <div class="links-container">
-           
-        </div>
+        <div class="links-container"><a href="qwe">qwe</a><br><a href="qwert">qwert</a><br></div>
         <footer>
-            <p class="footertext" style="">SecureLinks</p>
+            <p class="footertext">SecureLinks</p>
         </footer>
     </body>
 </html>
