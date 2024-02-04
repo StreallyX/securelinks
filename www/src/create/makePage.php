@@ -1,5 +1,71 @@
 <?php
+// Récupération forms website
+session_start(); // Démarrer la session
+    // Récupérer les données soumises par le formulaire et les stocker dans la session
+    $_SESSION['backgroundcolor'] = $_POST['colorPicker'];
+    $_SESSION['userNameInput'] = $_POST['userNameInput'];
+    $_SESSION['userDescriptionInput'] = $_POST['userDescriptionInput'];
+
+$username = $_SESSION['userNameInput'];
+
+// Création du dossier au nom de la personne
+mkdir("../../website/".$username);
+
+$target_dir = "../../website/".$username."/"; // Dossier où l'image sera chargée
+$target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+$uploadOk = 1;
+$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+
+$newFileName = "profilepic." . $imageFileType;
+$target_file = $target_dir . $newFileName;
+// Vérifie si le fichier image est une image réelle ou une fausse image
+if(isset($_POST["submit"])) {
+  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  if($check !== false) {
+    echo "Le fichier est une image - " . $check["mime"] . ".";
+    $uploadOk = 1;
+  } else {
+    echo "Le fichier n'est pas une image.";
+    $uploadOk = 0;
+  }
+}
+
+// Vérifie si le fichier existe déjà
+if (file_exists($target_file)) {
+  echo "Désolé, le fichier existe déjà.";
+  $uploadOk = 0;
+}
+
+// Vérifie la taille du fichier
+if ($_FILES["fileToUpload"]["size"] > 500000) {
+  echo "Désolé, votre fichier est trop volumineux.";
+  $uploadOk = 0;
+}
+
+// Autorise certains formats de fichier
+if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
+&& $imageFileType != "gif" ) {
+  echo "Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.";
+  $uploadOk = 0;
+}
+
+// Vérifie si $uploadOk est mis à 0 par une erreur
+if ($uploadOk == 0) {
+  echo "Désolé, votre fichier n'a pas été chargé.";
+// Si tout est ok, essaie de charger le fichier
+} else {
+  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+    echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été chargé.";
+  } else {
+    echo "Désolé, il y a eu une erreur lors du chargement de votre fichier.";
+  }
+}
+
+
+
+
 $PHPcontent = "<!DOCTYPE html>
+
 <html lang=\"en\">
     <head>
         <meta charset=\"UTF-8\">
@@ -8,12 +74,19 @@ $PHPcontent = "<!DOCTYPE html>
         <link rel=\"stylesheet\" href=\"style.css\">
     </head>
     <body class=\"background-image\">
-    <div class=\"profile-container\"><img src=\"image/profil.png\" alt=\"Photo de Profil\" class=\"profile-image\">
-    <h1 class=\"colortextw\">@ana.whiterose</h1>
-    <p class=\"colortextw\">My secret world ♥</p>
-    </div>
-    <div class=\"links-container\">
-    <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée --><a href=\"https://mym.fans/Anawhiterose\" class=\"link-box\" style=\"background-image: url('image/mym.png');\"></a><a href=\"https://onlyfans.com/ana.whiterose\" class=\"link-box\" style=\"background-image: url('image/onlyfans.png');\"></a></div><footer><!-- Le <footer> contient généralement des informations de contact, des droits d'auteur, etc. --><p class=\"footertext\" style=\"\">SecureLinks</p><!-- Ici, un simple texte \"SecureLinks\" est affiché --></footer></body></html>";
+        <div class=\"profile-container\">
+        <img src=\"".$newFileName."\" alt=\"Photo de Profil\" class=\"profile-image\">
+        <h1 class=\"colortextw\">".$_SESSION['userNameInput']."</h1>
+        <p class=\"colortextw\">".$_SESSION['userDescriptionInput']."</p>
+        </div>
+        <div class=\"links-container\">
+           
+        </div>
+        <footer>
+            <p class=\"footertext\" style=\"\">SecureLinks</p>
+        </footer>
+    </body>
+</html>";
 $CSScontent = "html {
     height: 100%;
 }
@@ -28,7 +101,7 @@ body {
     height: 100%;
 }
 .background-image {
-    background: linear-gradient(to bottom, rgb(214, 0, 0), #500000);
+    background-color: ".$_SESSION['backgroundcolor'].";
     margin: 0;
     padding: 0;
     height: 100%;
@@ -80,13 +153,10 @@ footer {
     text-align: center;
 }
 ";
+$JScontent ="";
 
-$username = "salope02";
 
 $PHPfilename = $username.".php";
-
-// Création du dossier au nom de la personne
-mkdir("../../website/".$username);
 
 // Création de la apge PHP de la personne
 file_put_contents("../../website/".$username."/index.php", $PHPcontent);
@@ -94,9 +164,9 @@ file_put_contents("../../website/".$username."/index.php", $PHPcontent);
 // Création du fichier CSS de la personne
 file_put_contents("../../website/".$username."/style.css", $CSScontent);
 // Création du fichier JS de la personne
-file_put_contents("../../website/".$username."/script.js", $content);
+file_put_contents("../../website/".$username."/script.js", $JScontent);
 
 
-header("Location: \\www\\website\\" . $username."\\");
+//header("Location: create-1infos.php");
 
 ?>

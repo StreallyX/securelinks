@@ -1,3 +1,12 @@
+<?php
+session_start();
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Récupérer les données soumises par le formulaire et les stocker dans la session
+    $_SESSION['nom'] = $_POST['nom'];
+    $_SESSION['prenom'] = $_POST['prenom'];
+    $_SESSION['email'] = $_POST['email'];
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -37,23 +46,23 @@
             </div>
             <div class="flex-content">
                 <div class="content-text">
-                    <form action="create-1infos.php" method="post">
+                    <form action="makePage.php" method="post" enctype="multipart/form-data">
                         <h1>Build your website</h1>
 
                         <h2>Choose your profil image</h2>
                         
-                        <input type="file" id="imageInput" name="image" accept="image/*" />
+                        <input type="file" name="fileToUpload" id="fileToUpload">
 
                         <h2>Choose your color</h2>
                         <div class="color-picker-container">
-                            <input type="color" id="colorPicker" value="#1100FF">
+                            <input name="colorPicker" type="color" id="colorPicker" value="#1100FF">
                         </div>
 
 
                         <h2>Add your links</h2>
                         <div class="link-add-container">
-                            <input type="url" id="linkInput" placeholder="Entrez votre lien ici">
-                            <span onclick="addLink()" class="btn-add">+</span>
+                            <input  name="linkInput"  type="url" id="linkInput" placeholder="Entrez votre lien ici">
+                            <button onclick="addLink()" class="btn-add">+</button>
                         </div>
                         
                         <div id="linksList" class="links-list">
@@ -61,12 +70,12 @@
                         </div>
 
                         <h2>Insert your infos</h2>
-                        <input type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
-                        <input type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
+                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
+                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
                         <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
 
                     
-                        <input type="submit" value="Next">
+                        <input name="submit" type="submit" value="Next">
                      </form>
                 </div>
                 <div class="content-text">
