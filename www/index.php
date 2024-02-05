@@ -28,23 +28,23 @@
         
     </header>
     <div class="content">
-        
-        <h1>SecureLinks</h1>
-        <h2>Want to be protected from bans?</h2>
-        <p>SecureLinks offers advanced solutions to safeguard your presence on Instagram, TikTok, and other platforms, effectively protecting you against bots and unjust restrictions.</p>
-
+        <div class="content-contain-title">
+            <h1>SecureLinks</h1>
+            <h2>Want to be protected from bans?</h2>
+            <p>SecureLinks offers advanced solutions to safeguard your presence on Instagram, TikTok, and other platforms, effectively protecting you against bots and unjust restrictions.</p>
+        </div>
         <div class="content-contain">
             <div class="content-stuff">
                 <h2>Protection Against Instagram, TikTok Bots, and More</h2>
                 <p>Our innovative technology identifies and blocks bot actions, ensuring the security of your account on social networks.</p>
             </div>
             <div class="content-stuff">
-                <img src="src/image/cad.png" alt="Fighting Against Bots">
+                <img src="src/image/bots.png" alt="Fighting Against Bots">
             </div>
         </div>
-        <div class="content-contain">
+        <div class="content-contain2">
             <div class="content-stuff">
-                <img src="src/image/cad.png" alt="Data Analysis">
+                <img src="src/image/data.png" alt="Data Analysis">
             </div>
             <div class="content-stuff">
                 <h2>Comprehensive Data Analysis of Your Site</h2>
@@ -57,12 +57,12 @@
                 <p>Increase your site's visibility on search engines with our customized SEO optimization strategies.</p>
             </div>
             <div class="content-stuff">
-                <img src="src/image/cad.png" alt="SEO Optimization">
+                <img src="src/image/seo.png" alt="SEO Optimization">
             </div>
         </div>
-        <div class="content-contain">
+        <div class="content-contain2">
             <div class="content-stuff">
-                <img src="src/image/cad.png" alt="Custom Design">
+                <img src="src/image/custom.png" alt="Custom Design">
             </div>
             <div class="content-stuff">
                 <h2>Customize Your Website As You Wish</h2>

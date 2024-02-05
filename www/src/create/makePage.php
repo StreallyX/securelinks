@@ -92,7 +92,10 @@ $PHPcontent = "<!DOCTYPE html>
         <div class=\"links-container\">";
 
 if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
+    $compteur = 0;
     foreach ($_SESSION['links'] as $link) {
+        $compteur++;
+
         $PHPcontent .= "<a href=\"$link\">$link</a><br>";
     }
 }
@@ -171,6 +174,8 @@ footer {
     text-align: center;
 }
 ";
+
+
 $JScontent ="";
 
 
