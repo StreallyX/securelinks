@@ -1,0 +1,108 @@
+.visually-hidden {
+    position: absolute;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border-width: 0;
+}
+
+.pseudo-checkbox {
+    display: block;
+    padding: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.pseudo-checkbox .checkbox-display {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    background-color: #fff;
+    border: 1px solid #000;
+}
+
+
+.tarif:hover .pseudo-checkbox, .tarif.selected .pseudo-checkbox {
+    border-color: #007bff; /* Bordure pour indiquer la sélection */
+}
+
+.selected {
+    border-color: #007bff; /* Bordure pour indiquer la sélection */
+    border-style:solid;
+    border-width: 2px;
+}
+
+.tarifs-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    text-align: center; /* Centrer le texte à l'intérieur des éléments */
+}
+
+
+
+.tarif {
+    border: 1px solid #ccc;
+    padding: 20px;
+}
+
+.price {
+    font-weight: bold;
+}
+
+#total-price {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#conditions-check {
+    margin-top: 20px;
+}
+.content{
+
+    margin-bottom: 200px;
+}
+
+
+
+
+/* Styles CSS pour la modale */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+}
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+}
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+.selectable {
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s;
+}
+
+.selectable.selected {
+    border-color: blue; /* Changer la couleur de la bordure au clic */
+}

@@ -20,7 +20,7 @@
             <ul id="menu">
               <li><a href="../index.php">Home</a></li>
               <li><a href="tarifs.php">Pricing</a></li>
-              <li><a href="example.php">Example</a></li>
+              <li><a href="create.php">Create</a></li>
               <li><a href="contact.php">Contact</a></li>
             </ul>
            </div>
@@ -35,7 +35,7 @@
                 <p class="price">Free</p>
                 <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
                 <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
-                <a href="create2.php" class="tarif-button">Create</a>
+                <a href="create.php" class="tarif-button">Create</a>
             </div>
 
             <!-- Website Security Option -->
@@ -48,6 +48,7 @@
             </div>
 
             <!-- SEO Optimization Option -->
+            <!--
             <div class="tarif">
                 <h2>SEO Optimization</h2>
                 <p class="price">$2.99/month</p>
@@ -55,8 +56,9 @@
                 <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
-
+            -->
             <!-- Data Analysis Option -->
+            <!--
             <div class="tarif">
                 <h2>Data Analysis</h2>
                 <p class="price">$4.99/month</p>
@@ -64,8 +66,9 @@
                 <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
-
+            -->
             <!-- Advanced Website Customization Option -->
+            <!--
             <div class="tarif">
                 <h2>Advanced Website Customization</h2>
                 <p class="price">$29.99/month</p>
@@ -73,6 +76,7 @@
                 <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
+            -->
          </div>
     </div>
 

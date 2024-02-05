@@ -1,0 +1,57 @@
+.container {
+    text-align: center;
+    margin: auto;
+}
+
+
+input[type="text"],
+input[type="email"] {
+  width: 90%; /* Taille de 50% de la largeur de l'écran */
+  border: 2px solid black; /* Bordure noire */
+  border-radius: 8px; /* Radius légèrement arrondi */
+  padding: 10px; /* Espace intérieur */
+  margin: 20px;
+}
+
+input[type="submit"] {
+    background-color: #0073e6;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    
+}
+
+input[type="submit"]:hover {
+    background-color: #005bbf;
+}
+
+.etapes {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.etape {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    border:solid;
+    border-width: 3px;
+    border-color: black;
+}
+
+.etape.remplie {
+    background-color: black;
+}
+form{
+    width: 100%;
+}
