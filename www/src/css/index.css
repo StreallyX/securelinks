@@ -2,13 +2,29 @@
     height: 100%;
     width: 100%;
     margin-bottom: 5%;
-    animation: wipe-enter 5s ease-in;
+
+	display: flex;
+    flex-direction: column;
+
+    align-items: center; /* Centrer horizontalement */
+    justify-content: center; /* Centrer verticalement */
+    text-align: center; /* Centrer le texte à l'intérieur des éléments */
 }
-@keyframes wipe-enter {
-	0% {
-		transform: scale(0, .025);
-	}
-	50% {
-		transform: scale(1, .025);
-	}
+
+.content-contain{
+	width:70%;
+	display: flex;
+	flex-direction: row;
+}
+.content-stuff{
+	width:50%;
+	height: 250px;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.content-stuff img {
+    width: 100%; /* Remplit la largeur du conteneur */
+    height: 100%; /* Remplit la hauteur du conteneur */
+    object-fit: cover; /* Couvre l'espace disponible sans respecter le ratio */
 }
