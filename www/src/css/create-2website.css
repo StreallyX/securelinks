@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Ombre pour donner un effet 3D */
     overflow: hidden; /* Empêcher le contenu de déborder */
     position: relative; /* Pour positionner la caméra et le bouton */
-    background-color: blue; /* Couleur de fond par défaut */
+    background-color: #0000ff; /* Couleur de fond par défaut */
     overflow-y: auto;
     text-align: right;
     align-self: center;
@@ -134,26 +134,4 @@
     }
 
     /* Autres ajustements pour le responsive ... */
-}
-.etapes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-}
-
-.etape {
-    width: 30px;
-    height: 30px;
-    background-color: gray;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.etape.remplie {
-    background-color: green;
 }

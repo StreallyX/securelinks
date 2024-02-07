@@ -4,22 +4,18 @@ body {
     padding: 0;
     display: flex;
     flex-direction: column;
-    background-color: #f4f4f4;
-    color: #333;
+    /*background-color: #f4f4f4;
+    color: #333;*/
     width: 100%;
     height: 100%;
+
+    background: linear-gradient(to bottom, #3498db, #9b59b6, #e74c3c);
+  /* Le dégradé va du bleu (#3498db) au violet (#9b59b6) au rouge (#e74c3c) */
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Assurez-vous que le dégradé couvre tout l'arrière-plan */
+  color: #ffffff; /* Texte en blanc pour une meilleure lisibilité */
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Header */
@@ -149,11 +145,10 @@ nav a {
   transform: rotate(-45deg) translate(0, -1px);
 }
 
-#menu
-{
+#menu {
   position: absolute;
   width: 150px;
-  height: 1000px;
+  height: 100vh; /* Utilisation de min-height au lieu de height */
   box-shadow: 0 0 10px #85888C;
   margin: -50px 0 0 -50px;
   padding: 50px;
@@ -162,7 +157,7 @@ nav a {
   -webkit-font-smoothing: antialiased;
   transform-origin: 0% 0%;
   transform: translate(-100%, 0);
-  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  transition: transform 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
 }
 
 #menu li
@@ -219,43 +214,73 @@ nav a {
 }
 
 .footer {
-    height: 10%;
-    position:fixed;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background-color: #333;
-    color: #fff;
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    text-align: center;
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  position: sticky;
+  bottom: 0;
+  z-index: 100; /* Ajout d'un z-index pour assurer que le footer reste au-dessus du contenu */
 }
 
 .contact-info {
-    flex-grow: 1;
-    margin-right: 20px;
+  flex-grow: 1;
+  margin-right: 20px;
 }
 
 .contact-info h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
 }
 
 .contact-info p {
-    font-size: 14px;
-    margin: 0;
+  font-size: 14px;
+  margin: 0;
 }
-
 
 .content {
-    flex-grow: 1;
-    /* Add your content styles here */
+  /* Add your content styles here */
+  margin-bottom: 60px; /* Height of the footer */
 }
 
+/* Assurez-vous que le footer ne dépasse pas la hauteur de la fenêtre */
+@media screen and (max-height: 100vh) {
+  .footer {
+    position: static;
+  }
+}
 /* Fin Footer */
+
 
 .colortextw{
     color: white;
+}
+
+.etapes {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.etape {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border:solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.etape.remplie {
+  background-color: black;
 }

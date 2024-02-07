@@ -9,10 +9,10 @@
     <body class="background-image">
         <div class="profile-container">
             <img src="profilepic." alt="Photo de Profil" class="profile-image">
-            <h1 class="colortextw"></h1>
-            <p class="colortextw"></p>
+            <h1 class="colortextw">Anawhiteorse</h1>
+            <p class="colortextw">bbwhtfdwrgtfdfswrhtdfseergt4regfbdrgbewhtdfs4trhtdfstht</p>
         </div>
-        <div class="links-container"><a href="qwe">qwe</a><br><a href="qwert">qwert</a><br></div>
+        <div class="links-container"><a href="h">h</a><br><a href="h">h</a><br><a href="jrzthgrfwe">jrzthgrfwe</a><br><a href="td">td</a><br></div>
         <footer>
             <p class="footertext">SecureLinks</p>
         </footer>

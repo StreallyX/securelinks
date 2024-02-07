@@ -28,9 +28,46 @@
         
     </header>
     <div class="content">
-        <div class="content-container">
+        <div class="content-contain-title">
             <h1>SecureLinks</h1>
-            <h2>Want to be protected from bann ?</h2>
+            <h2>Want to be protected from bans?</h2>
+            <p>SecureLinks offers advanced solutions to safeguard your presence on Instagram, TikTok, and other platforms, effectively protecting you against bots and unjust restrictions.</p>
+        </div>
+        <div class="content-contain">
+            <div class="content-stuff">
+                <h2>Protection Against Instagram, TikTok Bots, and More</h2>
+                <p>Our innovative technology identifies and blocks bot actions, ensuring the security of your account on social networks.</p>
+            </div>
+            <div class="content-stuff">
+                <img src="src/image/bots.png" alt="Fighting Against Bots">
+            </div>
+        </div>
+        <div class="content-contain2">
+            <div class="content-stuff">
+                <img src="src/image/data.png" alt="Data Analysis">
+            </div>
+            <div class="content-stuff">
+                <h2>Comprehensive Data Analysis of Your Site</h2>
+                <p>Gain precise insights with a complete analysis of clicks, visits, and interactions on your site to better understand your audience.</p>
+            </div>
+        </div>
+        <div class="content-contain">
+            <div class="content-stuff">
+                <h2>Boost Your Site with SEO Optimization</h2>
+                <p>Increase your site's visibility on search engines with our customized SEO optimization strategies.</p>
+            </div>
+            <div class="content-stuff">
+                <img src="src/image/seo.png" alt="SEO Optimization">
+            </div>
+        </div>
+        <div class="content-contain2">
+            <div class="content-stuff">
+                <img src="src/image/custom.png" alt="Custom Design">
+            </div>
+            <div class="content-stuff">
+                <h2>Customize Your Website As You Wish</h2>
+                <p>With the help of our designers and developers, get a unique website designed especially to meet your needs and stand out from standard templates.</p>
+            </div>
         </div>
     </div>
     <footer class="footer">
@@ -43,7 +80,8 @@
         <div class="social-media">
             <h3>Follow Us</h3>
             <ul>
-                <li><a href="#" class="fa fa-instagram"></a></li>
+                <!-- Mettre le bon lien -->
+                <li><a href="https://instagram/securelinks" class="fa fa-instagram"></a></li>
             </ul>
         </div>
     </footer>

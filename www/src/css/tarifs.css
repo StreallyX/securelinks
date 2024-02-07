@@ -5,27 +5,26 @@
     flex-wrap: wrap;
     gap: 20px;
     padding: 20px;
-    background-color: #f4f4f4;
 }
 
 .tarif {
-    background-color: white;
-    border: 1px solid #ddd;
+    border: 5px solid black;
     border-radius: 8px;
     padding: 20px;
     width: 300px;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: rgb(22, 22, 22);
 }
 
 .tarif h2 {
-    color: #333;
+    color: white;
     margin-bottom: 10px;
 }
 
 .price {
     font-size: 1.5em;
-    color: #007bff;
+    color: white;
     margin-bottom: 15px;
 }
 
@@ -54,8 +53,6 @@
     }
 
     .tarif {
-        background-color: white;
-        border: 1px solid #ddd;
         border-radius: 8px;
         padding: 20px;
         width: 80%;

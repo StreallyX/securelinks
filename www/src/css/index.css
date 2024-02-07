@@ -1,14 +1,98 @@
-.content{
+/* Styles de base pour les écrans de grande taille */
+.content {
     height: 100%;
     width: 100%;
     margin-bottom: 5%;
-    animation: wipe-enter 5s ease-in;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
-@keyframes wipe-enter {
-	0% {
-		transform: scale(0, .025);
-	}
-	50% {
-		transform: scale(1, .025);
-	}
+
+.content-contain {
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rem;
+}
+
+.content-contain2{
+    width: 70%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 10rem;
+}
+
+.content-contain-title {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.content-contain-title h1 {
+    font-size: 500%;
+    color: white;
+}
+
+.content-stuff {
+    width: 50%;
+    height: 50%;
+    overflow: hidden;
+    padding: 5rem;
+    justify-content: center;
+    align-items: center;
+    margin:auto;
+}
+
+.content-stuff img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10%;
+    
+}
+
+.center-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Assurez-vous que le conteneur occupe toute la hauteur de son parent */
+}
+
+/* Styles pour les écrans de taille moyenne (par exemple, tablettes) */
+@media (max-width: 768px) {
+    .content-contain {
+        flex-direction: column;
+    }
+    .content-contain2{
+        flex-direction:column-reverse;
+    }
+    .content-stuff {
+        width: 100%;
+        padding: 0rem;
+    }
+    .content-stuff img {
+        border:none;
+    }
+}
+
+/* Styles pour les écrans de petite taille (par exemple, smartphones) */
+@media (max-width: 576px) {
+    .content-contain-title h1 {
+        font-size: 300%;
+    }
+    .content-contain2{
+        flex-direction:column-reverse;
+    }
+    .content-stuff {
+        height: auto;
+        padding: 0rem;
+    }
+    .content-stuff img {
+        border:none;
+    }
 }

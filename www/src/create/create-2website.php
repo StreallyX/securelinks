@@ -33,8 +33,8 @@ $_SESSION['etape'] = 1;
         
         </header>
             <div class="etapes">
-                <div class="etape"></div>
                 <div class="etape remplie"></div>
+                <div class="etape"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
@@ -50,7 +50,7 @@ $_SESSION['etape'] = 1;
 
                         <h2>Choose your color</h2>
                         <div class="color-picker-container">
-                            <input name="colorPicker" type="color" id="colorPicker" value="#1100FF">
+                            <input name="colorPicker" type="color" id="colorPicker" value="<?php echo isset($_SESSION['backgroundcolor']) ? $_SESSION['backgroundcolor'] : '#0000FF'; ?>">
                         </div>
 
 
@@ -62,12 +62,28 @@ $_SESSION['etape'] = 1;
                         
                         <div id="linksList" class="links-list">
                             <!-- Les liens ajoutés apparaîtront ici -->
+                            
+                            <?php 
+                                if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
+                                    foreach ($_SESSION['links'] as $link) {
+                                
+                                        ?>
+                                            <div class="link-item">
+                                                <span><?php echo $link; ?></span>
+                                                <input type="hidden" name="links[]" value="<?php echo $link; ?>">
+                                                <button class="btn-remove" type="button">-</button>
+                                            </div>
+
+                                        <?php
+                                    }
+                                }
+                            ?>
+
                         </div>
 
                         <h2>Insert your infos</h2>
-                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
-                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
-                        <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
+                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="<?php echo isset($_SESSION['userNameInput']) ? $_SESSION['userNameInput'] : ''; ?>" oninput="updateUserInfo()">
+                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="<?php echo isset($_SESSION['userDescriptionInput']) ? $_SESSION['userDescriptionInput'] : ''; ?>" oninput="updateUserInfo()">
 
                         <input name="submit" type="submit" value="Next">
                      </form>
@@ -76,11 +92,11 @@ $_SESSION['etape'] = 1;
                 <div class="presentation">
                         <!-- Conteneur pour le profil utilisateur -->
                         <div class="profile-container">
-                            <img src="../image/fille.png" alt="Photo de Profil" class="profile-image">
+                            <img src="../image/fille.png" alt="Photo de Profil" class="profile-image" id="profileImage">
                             <!-- Image de profil de l'utilisateur -->
-                            <h1 class="colortextw">@the.girl1234</h1> 
+                            <h1 id="title" class="colortextw"></h1> 
                             <!-- Nom d'utilisateur affiché comme un titre -->
-                            <p class="colortextw">SecureLinks</p>
+                            <p id="desc" class="colortextw"></p>
                             <!-- Description ou slogan sous le nom d'utilisateur --> 
                         </div>
 
@@ -95,6 +111,7 @@ $_SESSION['etape'] = 1;
 
             </div>
         <script>
+            updateUserInfo();
             document.getElementById('colorPicker').addEventListener('input',function() {
             document.querySelector('.presentation').style.backgroundColor = this.value;
             });
@@ -124,6 +141,7 @@ $_SESSION['etape'] = 1;
                     removeBtn.classList.add('btn-remove');
                     removeBtn.type = 'button'; // Pour éviter de soumettre le formulaire
                     removeBtn.onclick = function() {
+                        
                         linksList.removeChild(linkItem);
                     };
 
@@ -137,16 +155,44 @@ $_SESSION['etape'] = 1;
                 }
             }
 
+            document.addEventListener('DOMContentLoaded', function() {
+                // Attache l'écouteur d'événements au conteneur parent 'linksList'
+                var linksList = document.getElementById('linksList');
+                
+                linksList.addEventListener('click', function(event) {
+                    // Vérifie si l'élément cliqué est un bouton de suppression
+                    if (event.target.classList.contains('btn-remove')) {
+                        var linkItem = event.target.parentNode; // Obtient le div 'link-item' parent
+                        linksList.removeChild(linkItem); // Supprime le 'link-item' du conteneur
+                    }
+                });
+            });
+
+
             function updateUserInfo() {
             // Récupérer les valeurs des champs de saisie
             var userName = document.getElementById('userNameInput').value;
             var userDescription = document.getElementById('userDescriptionInput').value;
 
             // Mettre à jour le contenu des éléments h1 et p
-            document.getElementById('userNameDisplay').innerHTML = userName;
-            document.getElementById('userDescriptionDisplay').innerHTML = userDescription;
+            document.getElementById('title').innerHTML = userName;
+            document.getElementById('desc').innerHTML = userDescription;
+            document.querySelector('.presentation').style.backgroundColor = document.getElementById('colorPicker').value
         }
-
+        
+        document.getElementById('fileToUpload').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    // Met à jour l'attribut src de l'image avec le résultat de FileReader
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+                
+                // Lit le fichier sélectionné
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
 
 
         </script>

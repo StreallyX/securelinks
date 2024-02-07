@@ -22,8 +22,8 @@
         <!-- Conteneur pour les liens -->
         <div class="links-container">
             <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée -->
-            <a href="https://mym.fans/Anawhiterose" class="link-box" style="background-image: url('image/mym.png');"></a>
-            <a href="https://onlyfans.com/ana.whiterose" class="link-box" style="background-image: url('image/onlyfans.png');"></a>
+            <a href="redirect.php?data=1" class="link-box" style="background-image: url('image/mym.png');"></a>
+            <a href="redirect.php?data=2" class="link-box" style="background-image: url('image/onlyfans.png');"></a>
         </div>
         <footer>
         <!-- Le <footer> contient généralement des informations de contact, des droits d'auteur, etc. -->

@@ -8,11 +8,11 @@
     </head>
     <body class="background-image">
         <div class="profile-container">
-            <img src="profilepic." alt="Photo de Profil" class="profile-image">
-            <h1 class="colortextw"></h1>
-            <p class="colortextw"></p>
+            <img src="profilepic.girl1234" alt="Photo de Profil" class="profile-image">
+            <h1 class="colortextw">@the.girl1234</h1>
+            <p class="colortextw">SecureLinks</p>
         </div>
-        <div class="links-container"><a href="qwe">qwe</a><br><a href="qwert">qwert</a><br></div>
+        <div class="links-container"><a href="h">h</a><br><a href="h">h</a><br></div>
         <footer>
             <p class="footertext">SecureLinks</p>
         </footer>
