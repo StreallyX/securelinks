@@ -20,6 +20,7 @@ color: #ffffff; /* Texte en blanc pour une meilleure lisibilité */
 
 /* Header */
 .header{
+  z-index: 101;
 width: 100%;
 position: fixed;
 }
