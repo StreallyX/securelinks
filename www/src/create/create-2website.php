@@ -92,7 +92,7 @@ $_SESSION['etape'] = 1;
                 <div class="presentation">
                         <!-- Conteneur pour le profil utilisateur -->
                         <div class="profile-container">
-                            <img src="../image/fille.png" alt="Photo de Profil" class="profile-image">
+                            <img src="../image/fille.png" alt="Photo de Profil" class="profile-image" id="profileImage">
                             <!-- Image de profil de l'utilisateur -->
                             <h1 id="title" class="colortextw"></h1> 
                             <!-- Nom d'utilisateur affiché comme un titre -->
@@ -179,7 +179,20 @@ $_SESSION['etape'] = 1;
             document.getElementById('desc').innerHTML = userDescription;
             document.querySelector('.presentation').style.backgroundColor = document.getElementById('colorPicker').value
         }
-
+        
+        document.getElementById('fileToUpload').addEventListener('change', function() {
+            if (this.files && this.files[0]) {
+                var reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    // Met à jour l'attribut src de l'image avec le résultat de FileReader
+                    document.getElementById('profileImage').src = e.target.result;
+                };
+                
+                // Lit le fichier sélectionné
+                reader.readAsDataURL(this.files[0]);
+            }
+        });
 
 
         </script>

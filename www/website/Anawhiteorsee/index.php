@@ -10,7 +10,7 @@
         <div class="profile-container">
             <img src="profilepic." alt="Photo de Profil" class="profile-image">
             <h1 class="colortextw">Anawhiteorsee</h1>
-            <p class="colortextw">bbwhtfdwrgtfdfswrhtdfseergt4regfbdrgbewhtdfs4trhtdfstht</p>
+            <p class="colortextw"></p>
         </div>
         <div class="links-container"><a href="h">h</a><br><a href="h">h</a><br><a href="jrzthgrfwe">jrzthgrfwe</a><br><a href="td">td</a><br></div>
         <footer>
