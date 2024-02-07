@@ -8,11 +8,11 @@
     </head>
     <body class="background-image">
         <div class="profile-container">
-            <img src="profilepic." alt="Photo de Profil" class="profile-image">
+            <img src="profilepic.jpg" alt="Photo de Profil" class="profile-image">
             <h1 class="colortextw">Anawhiteorsee</h1>
-            <p class="colortextw"></p>
+            <p class="colortextw">e</p>
         </div>
-        <div class="links-container"><a href="h">h</a><br><a href="h">h</a><br><a href="jrzthgrfwe">jrzthgrfwe</a><br><a href="td">td</a><br></div>
+        <div class="links-container"><a href="redirect.php?link=1">LIENh</a><br><a href="redirect.php?link=2">LIENh</a><br><a href="redirect.php?link=3">LIENjrzthgrfwe</a><br><a href="redirect.php?link=4">LIENtd</a><br></div>
         <footer>
             <p class="footertext">SecureLinks</p>
         </footer>

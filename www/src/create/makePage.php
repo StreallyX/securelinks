@@ -96,7 +96,7 @@ if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
     foreach ($_SESSION['links'] as $link) {
         $compteur++;
 
-        $PHPcontent .= "<a href=\"$link\">$link</a><br>";
+        $PHPcontent .= "<a href=\"redirect.php?link=$compteur\">LIEN$link</a><br>";
     }
 }
 
@@ -181,11 +181,41 @@ $JScontent ="";
 
 $PHPfilename = $username.".php";
 
-// Création de la apge PHP de la personne
+$PHPREDIRECTcontent = "<?php\n";
+$PHPREDIRECTcontent .= "if (isset(\$_GET['link']) && ctype_digit(\$_GET['link'])) {\n";
+$PHPREDIRECTcontent .= "  \$linkID = \$_GET['link'];\n";
+$PHPREDIRECTcontent .= "  switch (\$linkID) {\n";
+
+$compteur2 = 1;
+foreach ($_SESSION['links'] as $link) {
+    // Ajoute chaque cas dans le contenu de PHPREDIRECTcontent
+    $PHPREDIRECTcontent .= "    case {$compteur2}:\n";
+    $PHPREDIRECTcontent .= "      header(\"Location: " . $link . "\");\n";
+    $PHPREDIRECTcontent .= "      break;\n";
+    $compteur2++;
+}
+
+$PHPREDIRECTcontent .= "    default:\n";
+$PHPREDIRECTcontent .= "      // Redirection par défaut ou gestion d'erreur\n";
+$PHPREDIRECTcontent .= "      header(\"Location: error.php\");\n";
+$PHPREDIRECTcontent .= "      break;\n";
+$PHPREDIRECTcontent .= "  }\n";
+$PHPREDIRECTcontent .= "} else {\n";
+$PHPREDIRECTcontent .= "  // Si 'link' n'est pas défini ou n'est pas un nombre\n";
+$PHPREDIRECTcontent .= "  header(\"Location: error.php\");\n";
+$PHPREDIRECTcontent .= "}\n";
+$PHPREDIRECTcontent .= "?>\n";
+
+// Utilisez cette chaîne pour créer ou mettre à jour le fichier redirect.php
+file_put_contents("../../website/" . $username . "/redirect.php", $PHPREDIRECTcontent);
+
+
+// Création de la page PHP de la personne
 file_put_contents("../../website/".$username."/index.php", $PHPcontent);
 
 // Création du fichier CSS de la personne
 file_put_contents("../../website/".$username."/style.css", $CSScontent);
+
 // Création du fichier JS de la personne
 file_put_contents("../../website/".$username."/script.js", $JScontent);
 
