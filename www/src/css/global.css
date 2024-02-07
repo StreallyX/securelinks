@@ -188,7 +188,10 @@ color: white;
 
 
 /* Content */
-
+.content{
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+}
 
 .content-container {
   max-width: 800px; /* Largeur maximale du contenu */

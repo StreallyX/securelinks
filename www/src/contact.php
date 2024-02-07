@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="css/contact.css">
 </head>
 <body>
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
     <header class="header">
             <nav role="navigation">
             <h1 id="NavTitle">SecureLinks</h1>
@@ -25,7 +25,6 @@
             </ul>
            </div>
           </nav>
-        
     </header>
     <div class="content">
         <div class="form-container">
@@ -55,19 +54,17 @@
         </div>
     </div>
  
-    <script src="script.js"></script>
     <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="contact-info">
-            <h3>Contact Us</h3>
+            <a href="src/contact.php"><h3 id="ContactUsFooter">Contact Us</h3></a>
             <p>Email: securelinkspro@gmail.com</p>
-            <p>Phone: +41 76 675 77 23</p>
         </div>
         <div class="social-media">
             <h3>Follow Us</h3>
             <ul>
-                <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
-                <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
-                <li><a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+                <!-- Mettre le bon lien -->
+                <li><a href="https://instagram/securelinks" class="fa fa-instagram"></a></li>
             </ul>
         </div>
     </footer>

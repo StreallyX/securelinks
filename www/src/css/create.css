@@ -1,3 +1,5 @@
+
+
 .presentation {
     margin: 0 auto;
     width: 300px; /* Largeur du téléphone */
@@ -117,7 +119,6 @@
     align-items: center; /* Centrage horizontal des éléments enfants */
     width: 50%; /* Chaque div prend 50% de la largeur */
     text-align: center; /* Centrage du texte à l'intérieur */
-    padding: 0 10px; /* Ajout d'un peu de padding pour éviter que le texte touche les bords */
 }
 
 
@@ -130,8 +131,13 @@
 
     .content-text {
         width: 100%; /* Chaque div prend toute la largeur sur les petits écrans */
-        padding: 0 20px; /* Augmentation du padding pour une meilleure lisibilité */
     }
+    
+    .content{
+        margin-bottom: 15rem;
+    }
+
+
 
     /* Autres ajustements pour le responsive ... */
 }

@@ -25,7 +25,6 @@
             </ul>
            </div>
           </nav>
-        
     </header>
     <div class="content">
         <div class="content-contain-title">
@@ -71,7 +70,7 @@
         </div>
     </div>
     <footer class="footer">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="contact-info">
             <a href="src/contact.php"><h3 id="ContactUsFooter">Contact Us</h3></a>
             <p>Email: securelinkspro@gmail.com</p>
