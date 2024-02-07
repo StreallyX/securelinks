@@ -12,7 +12,7 @@
             <h1 class="colortextw">@the.girl1234</h1>
             <p class="colortextw">SecureLinks</p>
         </div>
-        <div class="links-container"><a href="as">as</a><br><a href="wer.com">wer.com</a><br></div>
+        <div class="links-container"><a href="h">h</a><br><a href="h">h</a><br></div>
         <footer>
             <p class="footertext">SecureLinks</p>
         </footer>

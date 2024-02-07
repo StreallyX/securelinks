@@ -258,3 +258,29 @@ nav a {
 .colortextw{
     color: white;
 }
+
+.etapes {
+  width: 50%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.etape {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border:solid;
+  border-width: 3px;
+  border-color: black;
+}
+
+.etape.remplie {
+  background-color: black;
+}

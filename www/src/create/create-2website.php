@@ -33,8 +33,8 @@ $_SESSION['etape'] = 1;
         
         </header>
             <div class="etapes">
-                <div class="etape"></div>
                 <div class="etape remplie"></div>
+                <div class="etape"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
@@ -154,6 +154,19 @@ $_SESSION['etape'] = 1;
                     alert("Veuillez entrer un lien.");
                 }
             }
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Attache l'écouteur d'événements au conteneur parent 'linksList'
+                var linksList = document.getElementById('linksList');
+                
+                linksList.addEventListener('click', function(event) {
+                    // Vérifie si l'élément cliqué est un bouton de suppression
+                    if (event.target.classList.contains('btn-remove')) {
+                        var linkItem = event.target.parentNode; // Obtient le div 'link-item' parent
+                        linksList.removeChild(linkItem); // Supprime le 'link-item' du conteneur
+                    }
+                });
+            });
 
 
             function updateUserInfo() {

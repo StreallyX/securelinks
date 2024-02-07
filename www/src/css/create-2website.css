@@ -135,25 +135,3 @@
 
     /* Autres ajustements pour le responsive ... */
 }
-.etapes {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    padding: 10px;
-}
-
-.etape {
-    width: 30px;
-    height: 30px;
-    background-color: gray;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
-.etape.remplie {
-    background-color: green;
-}
