@@ -82,9 +82,8 @@ $_SESSION['etape'] = 1;
                         </div>
 
                         <h2>Insert your infos</h2>
-                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="@the.girl1234" oninput="updateUserInfo()">
-                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="SecureLinks" oninput="updateUserInfo()">
-                        <button class="marge" onclick="updateProfile()">Mettre à jour le profil</button>
+                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="<?php echo isset($_SESSION['userNameInput']) ? $_SESSION['userNameInput'] : ''; ?>" oninput="updateUserInfo()">
+                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="<?php echo isset($_SESSION['userDescriptionInput']) ? $_SESSION['userDescriptionInput'] : ''; ?>" oninput="updateUserInfo()">
 
                         <input name="submit" type="submit" value="Next">
                      </form>
@@ -95,9 +94,9 @@ $_SESSION['etape'] = 1;
                         <div class="profile-container">
                             <img src="../image/fille.png" alt="Photo de Profil" class="profile-image">
                             <!-- Image de profil de l'utilisateur -->
-                            <h1 class="colortextw">@the.girl1234</h1> 
+                            <h1 id="title" class="colortextw"></h1> 
                             <!-- Nom d'utilisateur affiché comme un titre -->
-                            <p class="colortextw">SecureLinks</p>
+                            <p id="desc" class="colortextw"></p>
                             <!-- Description ou slogan sous le nom d'utilisateur --> 
                         </div>
 
@@ -112,6 +111,7 @@ $_SESSION['etape'] = 1;
 
             </div>
         <script>
+            updateUserInfo();
             document.getElementById('colorPicker').addEventListener('input',function() {
             document.querySelector('.presentation').style.backgroundColor = this.value;
             });
@@ -175,8 +175,9 @@ $_SESSION['etape'] = 1;
             var userDescription = document.getElementById('userDescriptionInput').value;
 
             // Mettre à jour le contenu des éléments h1 et p
-            document.getElementById('userNameDisplay').innerHTML = userName;
-            document.getElementById('userDescriptionDisplay').innerHTML = userDescription;
+            document.getElementById('title').innerHTML = userName;
+            document.getElementById('desc').innerHTML = userDescription;
+            document.querySelector('.presentation').style.backgroundColor = document.getElementById('colorPicker').value
         }
 
 
