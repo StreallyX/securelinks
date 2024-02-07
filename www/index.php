@@ -80,7 +80,8 @@
         <div class="social-media">
             <h3>Follow Us</h3>
             <ul>
-                <li><a href="#" class="fa fa-instagram"></a></li>
+                <!-- Mettre le bon lien -->
+                <li><a href="https://instagram/securelinks" class="fa fa-instagram"></a></li>
             </ul>
         </div>
     </footer>

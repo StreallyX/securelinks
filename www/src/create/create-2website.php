@@ -50,7 +50,7 @@ $_SESSION['etape'] = 1;
 
                         <h2>Choose your color</h2>
                         <div class="color-picker-container">
-                            <input name="colorPicker" type="color" id="colorPicker" value="#1100FF">
+                            <input name="colorPicker" type="color" id="colorPicker" value="<?php echo isset($_SESSION['backgroundcolor']) ? $_SESSION['backgroundcolor'] : '#0000FF'; ?>">
                         </div>
 
 
@@ -62,6 +62,23 @@ $_SESSION['etape'] = 1;
                         
                         <div id="linksList" class="links-list">
                             <!-- Les liens ajoutés apparaîtront ici -->
+                            
+                            <?php 
+                                if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
+                                    foreach ($_SESSION['links'] as $link) {
+                                
+                                        ?>
+                                            <div class="link-item">
+                                                <span><?php echo $link; ?></span>
+                                                <input type="hidden" name="links[]" value="<?php echo $link; ?>">
+                                                <button class="btn-remove" type="button">-</button>
+                                            </div>
+
+                                        <?php
+                                    }
+                                }
+                            ?>
+
                         </div>
 
                         <h2>Insert your infos</h2>
@@ -124,6 +141,7 @@ $_SESSION['etape'] = 1;
                     removeBtn.classList.add('btn-remove');
                     removeBtn.type = 'button'; // Pour éviter de soumettre le formulaire
                     removeBtn.onclick = function() {
+                        
                         linksList.removeChild(linkItem);
                     };
 
@@ -136,6 +154,7 @@ $_SESSION['etape'] = 1;
                     alert("Veuillez entrer un lien.");
                 }
             }
+
 
             function updateUserInfo() {
             // Récupérer les valeurs des champs de saisie

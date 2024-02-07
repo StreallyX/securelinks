@@ -9,7 +9,7 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.5); /* Ombre pour donner un effet 3D */
     overflow: hidden; /* Empêcher le contenu de déborder */
     position: relative; /* Pour positionner la caméra et le bouton */
-    background-color: blue; /* Couleur de fond par défaut */
+    background-color: #0000ff; /* Couleur de fond par défaut */
     overflow-y: auto;
     text-align: right;
     align-self: center;
