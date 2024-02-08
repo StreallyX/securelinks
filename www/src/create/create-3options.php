@@ -60,7 +60,7 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
 
                     <?php
                     // Vérifiez la valeur de $_SESSION['option1']
-                    if ($_SESSION['option1'] === true) {
+                    if (isset($_SESSION['option1']) === true) {
                         $checked = 'checked="checked"';
                     } else {
                         $checked = ''; // Laissez l'attribut 'checked' vide sinon

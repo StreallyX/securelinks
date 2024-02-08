@@ -1,8 +1,9 @@
 <?php
 session_start(); // Démarrer la session
-if($_SERVER['REQUEST_METHOD'] != 'POST'){
+/*
+if($_SERVER['REQUEST_METHOD'] != 'GET'){
     header("Location: error.php");
-  }
+  }*/
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -37,8 +38,8 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
 
         <div class="container">
             <div class="etapes">
-                <div class="etape remplie"></div>
                 <div class="etape"></div>
+                <div class="etape remplie"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
                 <div class="etape"></div>
