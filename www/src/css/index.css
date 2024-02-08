@@ -1,4 +1,28 @@
 /* Styles de base pour les écrans de grande taille */
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transform: translateX(100%); /* Commence à droite */
+     /* Ajustez selon le besoin */
+}
+.right{
+    transform: translateX(100%);
+}
+.left{
+    transform: translateX(-100%);
+}
+.visible {
+    transition: all 1s;
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0); /* Revient à la position initiale */
+}
+section{
+    display: grid;
+    place-items: center;
+    place-content: center;
+    min-height: 25vh;
+}
 .content {
     height: 100%;
     width: 100%;

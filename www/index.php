@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SecureLinks</title>
     <link rel="stylesheet" href="src/css/global.css">
-    <link rel="stylesheet" href="src/css/index.css">             
+    <link rel="stylesheet" href="src/css/index.css">   
+            
 </head>
 <body>
     <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
@@ -32,7 +33,7 @@
             <h2>Want to be protected from bans?</h2>
             <p>SecureLinks offers advanced solutions to safeguard your presence on Instagram, TikTok, and other platforms, effectively protecting you against bots and unjust restrictions.</p>
         </div>
-        <div class="content-contain">
+        <section class="content-contain hidden right">
             <div class="content-stuff">
                 <h2>Protection Against Instagram, TikTok Bots, and More</h2>
                 <p>Our innovative technology identifies and blocks bot actions, ensuring the security of your account on social networks.</p>
@@ -40,8 +41,8 @@
             <div class="content-stuff">
                 <img src="src/image/bots.png" alt="Fighting Against Bots">
             </div>
-        </div>
-        <div class="content-contain2">
+        </section>
+        <section class="content-contain2 hidden left">
             <div class="content-stuff">
                 <img src="src/image/data.png" alt="Data Analysis">
             </div>
@@ -49,8 +50,8 @@
                 <h2>Comprehensive Data Analysis of Your Site</h2>
                 <p>Gain precise insights with a complete analysis of clicks, visits, and interactions on your site to better understand your audience.</p>
             </div>
-        </div>
-        <div class="content-contain">
+        </section>
+        <section class="content-contain hidden right">
             <div class="content-stuff">
                 <h2>Boost Your Site with SEO Optimization</h2>
                 <p>Increase your site's visibility on search engines with our customized SEO optimization strategies.</p>
@@ -58,8 +59,8 @@
             <div class="content-stuff">
                 <img src="src/image/seo.png" alt="SEO Optimization">
             </div>
-        </div>
-        <div class="content-contain2">
+        </section>
+        <section class="content-contain2 hidden left">
             <div class="content-stuff">
                 <img src="src/image/custom.png" alt="Custom Design">
             </div>
@@ -67,7 +68,7 @@
                 <h2>Customize Your Website As You Wish</h2>
                 <p>With the help of our designers and developers, get a unique website designed especially to meet your needs and stand out from standard templates.</p>
             </div>
-        </div>
+        </section>
     </div>
     <footer class="footer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -83,5 +84,6 @@
             </ul>
         </div>
     </footer>
+    <script src="index.js"></script> 
 </body>
 </html>
