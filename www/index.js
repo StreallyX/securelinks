@@ -1,3 +1,4 @@
+
 // Fonction pour ajouter la classe .visible
 
 function handleIntersect(entries, observer) {
@@ -26,4 +27,3 @@ function handleIntersect(entries, observer) {
     
     observer.observe(section);
   });
-  
