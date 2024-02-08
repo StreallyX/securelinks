@@ -14,6 +14,7 @@ $_SESSION['etape'] = 1;
     <body>
         <!-- <body> contient le contenu visible de votre page web -->
         <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
          <header class="header">
             <nav role="navigation">
             <h1 id="NavTitle">SecureLinks</h1>
@@ -32,83 +33,133 @@ $_SESSION['etape'] = 1;
           </nav>
         
         </header>
-            <div class="etapes">
-                <div class="etape remplie"></div>
-                <div class="etape"></div>
-                <div class="etape"></div>
-                <div class="etape"></div>
-                <div class="etape"></div>
-            </div>
-            <div class="flex-content">
-                <div class="content-text">
-                    <form action="makePage.php" method="post" enctype="multipart/form-data">
-                        <h1>Build your website</h1>
+            <div class="content">
+                <div class="etapes">
+                    <div class="etape remplie"></div>
+                    <div class="etape"></div>
+                    <div class="etape"></div>
+                    <div class="etape"></div>
+                    <div class="etape"></div>
+                </div>
+                <div class="flex-content">
+                    <div class="content-text">
+                        <form action="makePage.php" method="post" enctype="multipart/form-data">
+                            <h1>Build your website</h1>
 
-                        <h2>Choose your profil image</h2>
-                        
-                        <input type="file" name="fileToUpload" id="fileToUpload">
-
-                        <h2>Choose your color</h2>
-                        <div class="color-picker-container">
-                            <input name="colorPicker" type="color" id="colorPicker" value="<?php echo isset($_SESSION['backgroundcolor']) ? $_SESSION['backgroundcolor'] : '#0000FF'; ?>">
-                        </div>
-
-
-                        <h2>Add your links</h2>
-                        <div class="link-add-container">
-                            <input name="linkInput" type="url" id="linkInput" placeholder="Entrez votre lien ici">
-                            <button type="button" onclick="addLink()" class="btn-add">+</button>
-                        </div>
-                        
-                        <div id="linksList" class="links-list">
-                            <!-- Les liens ajoutés apparaîtront ici -->
-                            
+                            <h2>Choose your profil image</h2>
                             <?php 
-                                if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
-                                    foreach ($_SESSION['links'] as $link) {
-                                
-                                        ?>
-                                            <div class="link-item">
-                                                <span><?php echo $link; ?></span>
-                                                <input type="hidden" name="links[]" value="<?php echo $link; ?>">
-                                                <button class="btn-remove" type="button">-</button>
-                                            </div>
 
-                                        <?php
-                                    }
-                                }
+                                // Gestion d'erreur
+
+                                
+                                // Pas de fichier
+
+                                if(isset($_SESSION['error0']) && $_SESSION['error0'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Aucun fichier enregistrer.</div>
+                                    <?php $_SESSION['error0'] = false; endif; ?>
+                                <?php 
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error1']) && $_SESSION['error1'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Fichier trop volumineux.</div>
+                                    <?php $_SESSION['error1'] = false; endif; 
+                                // Le Fichier n'est pas une image
+                                
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error2']) && $_SESSION['error2'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Le Fichier n'est pas une image.</div>
+                                    <?php $_SESSION['error2'] = false; endif; 
+                                // Désolé, le fichier existe déjà
+                                
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error3']) && $_SESSION['error3'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, le fichier existe déjà.</div>
+                                    <?php $_SESSION['error3'] = false; endif; 
+                                // Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.
+                             
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error4']) && $_SESSION['error4'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.</div>
+                                    <?php $_SESSION['error4'] = false; endif; 
+                                // Désolé, votre fichier n'a pas été chargé.
+
+                            
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error5']) && $_SESSION['error5'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, votre fichier n'a pas été chargé.</div>
+                                    <?php $_SESSION['error5'] = false; endif;
+                                // Désolé, il y a eu une erreur lors du chargement de votre fichier
+                             
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error6']) && $_SESSION['error6'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, il y a eu une erreur lors du chargement de votre fichier.</div>
+                                    <?php $_SESSION['error6'] = false; endif; 
+
                             ?>
 
-                        </div>
+                            <input type="file" name="fileToUpload" id="fileToUpload">
 
-                        <h2>Insert your infos</h2>
-                        <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="<?php echo isset($_SESSION['userNameInput']) ? $_SESSION['userNameInput'] : ''; ?>" oninput="updateUserInfo()">
-                        <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="<?php echo isset($_SESSION['userDescriptionInput']) ? $_SESSION['userDescriptionInput'] : ''; ?>" oninput="updateUserInfo()">
+                            <h2>Choose your color</h2>
+                            <div class="color-picker-container">
+                                <input name="colorPicker" type="color" id="colorPicker" value="<?php echo isset($_SESSION['backgroundcolor']) ? $_SESSION['backgroundcolor'] : '#0000FF'; ?>">
+                            </div>
 
-                        <input name="submit" type="submit" value="Next">
-                     </form>
-                </div>
-                <div class="content-text">
-                <div class="presentation">
-                        <!-- Conteneur pour le profil utilisateur -->
-                        <div class="profile-container">
-                            <img src="../image/fille.png" alt="Photo de Profil" class="profile-image" id="profileImage">
-                            <!-- Image de profil de l'utilisateur -->
-                            <h1 id="title" class="colortextw"></h1> 
-                            <!-- Nom d'utilisateur affiché comme un titre -->
-                            <p id="desc" class="colortextw"></p>
-                            <!-- Description ou slogan sous le nom d'utilisateur --> 
-                        </div>
 
-                        <!-- Conteneur pour les liens -->
-                        <div class="links-container">
-                            <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée -->
-                            <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
-                            <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
+                            <h2>Add your links</h2>
+                            <div class="link-add-container">
+                                <input name="linkInput" type="url" id="linkInput" placeholder="Entrez votre lien ici">
+                                <button type="button" onclick="addLink()" class="btn-add">+</button>
+                            </div>
+                            
+                            <div id="linksList" class="links-list">
+                                <!-- Les liens ajoutés apparaîtront ici -->
+                                
+                                <?php 
+                                    if (isset($_SESSION['links']) && is_array($_SESSION['links'])) {
+                                        foreach ($_SESSION['links'] as $link) {
+                                    
+                                            ?>
+                                                <div class="link-item">
+                                                    <span><?php echo $link; ?></span>
+                                                    <input type="hidden" name="links[]" value="<?php echo $link; ?>">
+                                                    <button class="btn-remove" type="button">-</button>
+                                                </div>
+
+                                            <?php
+                                        }
+                                    }
+                                ?>
+
+                            </div>
+
+                            <h2>Insert your infos</h2>
+                            <input name="userNameInput" type="text" id="userNameInput" placeholder="Insert your username" value="<?php echo isset($_SESSION['userNameInput']) ? $_SESSION['userNameInput'] : ''; ?>" oninput="updateUserInfo()">
+                            <input name="userDescriptionInput" type="text" id="userDescriptionInput" placeholder="Write whatever you want" value="<?php echo isset($_SESSION['userDescriptionInput']) ? $_SESSION['userDescriptionInput'] : ''; ?>" oninput="updateUserInfo()">
+
+                            <input name="submit" type="submit" value="Next">
+                        </form>
+                    </div>
+                    <div class="content-text">
+                    <div class="presentation">
+                            <!-- Conteneur pour le profil utilisateur -->
+                            <div class="profile-container">
+                                <img src="../image/fille.png" alt="Photo de Profil" class="profile-image" id="profileImage">
+                                <!-- Image de profil de l'utilisateur -->
+                                <h1 id="title" class="colortextw"></h1> 
+                                <!-- Nom d'utilisateur affiché comme un titre -->
+                                <p id="desc" class="colortextw"></p>
+                                <!-- Description ou slogan sous le nom d'utilisateur --> 
+                            </div>
+
+                            <!-- Conteneur pour les liens -->
+                            <div class="links-container">
+                                <!-- Chaque <a> est un lien vers une autre page ou site, avec une image de fond personnalisée -->
+                                <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
+                                <a href="create-2website.php" class="link-box" style="background-image: url('../image/links.png');"></a>
+                            </div>
                         </div>
                     </div>
-                </div>
 
+                </div>
             </div>
         <script>
             updateUserInfo();
@@ -193,21 +244,27 @@ $_SESSION['etape'] = 1;
                 reader.readAsDataURL(this.files[0]);
             }
         });
+        setTimeout(function() {
+            const errors = document.querySelectorAll('.error-message');
+            errors.forEach(function(error) {
+                error.style.opacity = '0';
+                setTimeout(function() { error.style.display = 'none'; }, 600);
+            });
+        }, 5000); // Les messages disparaîtront après 5 secondes
 
 
         </script>
         <footer class="footer">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
             <div class="contact-info">
-                <h3>Contact Us</h3>
+                <a href="src/contact.php"><h3 id="ContactUsFooter">Contact Us</h3></a>
                 <p>Email: securelinkspro@gmail.com</p>
-                <p>Phone: +41 76 675 77 23</p>
             </div>
             <div class="social-media">
                 <h3>Follow Us</h3>
                 <ul>
-                    <li><a href="#"><img src="facebook-icon.png" alt="Facebook"></a></li>
-                    <li><a href="#"><img src="twitter-icon.png" alt="Twitter"></a></li>
-                    <li><a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a></li>
+                    <!-- Mettre le bon lien -->
+                    <li><a href="https://instagram/securelinks" class="fa fa-instagram"></a></li>
                 </ul>
             </div>
         </footer>
