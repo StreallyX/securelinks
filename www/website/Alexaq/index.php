@@ -9,10 +9,10 @@
     <body class="background-image">
         <div class="profile-container">
             <img src="profilepic.png" alt="Photo de Profil" class="profile-image">
-            <h1 class="colortextw">Aaaysdeeree</h1>
-            <p class="colortextw">jz</p>
+            <h1 class="colortextw">Alexaq</h1>
+            <p class="colortextw">Gaillard</p>
         </div>
-        <div class="links-container"><a href="redirect.php?link=1">LIENhf</a><br><a href="redirect.php?link=2">LIENjfnh</a><br></div>
+        <div class="links-container"><a href="redirect.php?link=1">LIENfe</a><br></div>
         <footer>
             <p class="footertext">SecureLinks</p>
         </footer>
