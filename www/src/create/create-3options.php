@@ -56,31 +56,20 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
                         <p>Peace of mind with enhanced security, protection against Instagram bans.</p>
                         <input type="checkbox" class="option" data-price="7.99" checked disabled>
                     </div>
-                    
-
-                    <?php
-                    // Vérifiez la valeur de $_SESSION['option1']
-                    if (isset($_SESSION['option1']) === true) {
-                        $checked = 'checked="checked"';
-                    } else {
-                        $checked = ''; // Laissez l'attribut 'checked' vide sinon
-                    }
-                    ?>
 
                     <!-- SEO Optimization Option -->
-                    <!--
+                    
                     <div class="tarif">
                         <h2>SEO Optimization</h2>
-                        <?php // var_dump($_SESSION);?>
                         <p class="price">$2.99/month</p>
                         <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
                         <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
-                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99" <?php  // echo $checked; ?>>
+                        <input type="checkbox" id="seo_optimization" name="seo_optimization" class="option" data-price="2.99">
                     </div>
-                    -->
+                    
 
                     <!-- Data Analysis Option -->
-                    <!--
+                    
                     <div class="tarif">
                         <h2>Data Analysis</h2>
                         <p class="price">$4.99/month</p>
@@ -88,11 +77,9 @@ if($_SERVER['REQUEST_METHOD'] != 'POST'){
                         <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
                         <input type="checkbox" id="data_analysis" name="data_analysis" class="option" data-price="4.99">
                     </div>
-                    -->
+                    
 
                     <!-- Advanced Website Customization Option -->
-                    
-                   
 
                     <div class="tarif">
                         <label id="pseudo-checkbox" class="pseudo-checkbox" data-price="29.99" >

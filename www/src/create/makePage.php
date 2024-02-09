@@ -268,6 +268,19 @@ $PHPREDIRECTcontent .= "?>\n";
 
     // Création du fichier JS de la personne
     file_put_contents("../../website/".$username."/script.js", $JScontent);
+    /*
+    $to = 'alexander.gaillard@eduvaud.ch';
+    $subject = 'Le sujet de votre email';
+    $message = 'Bonjour, ceci est un message de test.';
+    $headers = "From: info@securelinks.ch\r\n";
+    $headers .= "Reply-To: alexander.gaillard@eduvaud.ch\r\n";
+    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
+
+    if(mail($to, $subject, $message, $headers)) {
+        echo 'Email envoyé avec succès.';
+    } else {
+        echo 'Échec de l\'envoi de l\'email.';
+    }*/
 
     header("Location: create-1infos.php");
   }

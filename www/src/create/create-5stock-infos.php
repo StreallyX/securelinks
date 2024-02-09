@@ -1,5 +1,7 @@
 <?php
 
+    // Stockage de toute les infos
+
     // Stockage DB
     session_start();
     var_dump($_SESSION); 
