@@ -30,10 +30,23 @@
     </header>
         <div class="content">
             <div class="flex-content">
-                <div class="content-text">
-                    <h1>Create your website</h1>
-                    <p>Create your own website with our tools</p>
-                    <a class="custom-button" href="create/create-2website.php">Create</a>
+                <div class="content-text2">
+                    <div class="textcontent">
+                        <div>
+                        <h1>Create your website</h1>
+                        <p>Create your own website with our tools</p>
+                        <a class="custom-button" href="create/create-2website.php">Create</a>
+                        </div>
+                        <div class="or">
+                            <h2>OR</h2>
+                        </div>
+                        <div>
+                            <h1>Get a custom website</h1>
+                            <p>For 39.99$/per month your dream website will be created </p>
+                            <a class="custom-button" href="create/create-2website.php">Create</a>
+
+                        </div>
+                    </div>
                 </div>
                 <div class="content-text">
                     <div class="presentation">

@@ -117,7 +117,16 @@
     flex-direction: column; /* Organisation des éléments enfants verticalement */
     justify-content: center; /* Centrage vertical des éléments enfants */
     align-items: center; /* Centrage horizontal des éléments enfants */
-    width: 50%; /* Chaque div prend 50% de la largeur */
+    width: 30%; /* Chaque div prend 50% de la largeur */
+    text-align: center; /* Centrage du texte à l'intérieur */
+}
+
+.content-text2 {
+    display: flex; /* Utilisation de Flexbox pour les enfants */
+    flex-direction: column; /* Organisation des éléments enfants verticalement */
+    justify-content: center; /* Centrage vertical des éléments enfants */
+    align-items: center; /* Centrage horizontal des éléments enfants */
+    width: 70%; /* Chaque div prend 50% de la largeur */
     text-align: center; /* Centrage du texte à l'intérieur */
 }
 
@@ -140,4 +149,23 @@
 
 
     /* Autres ajustements pour le responsive ... */
+}
+
+.textcontent{
+    display: flex;
+    flex-direction: row;
+}
+
+.or{
+    background-color: grey;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin:auto 20px;
+    border-radius: 20%;
+    
+}
+.or h2{
+    margin:0px;
 }

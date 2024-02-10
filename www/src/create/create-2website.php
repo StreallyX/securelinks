@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $_SESSION['etape'] = 1;
@@ -93,6 +94,11 @@ $_SESSION['etape'] = 1;
                                 if(isset($_SESSION['error6']) && $_SESSION['error6'] === true) : ?>
                                     <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, il y a eu une erreur lors du chargement de votre fichier.</div>
                                     <?php $_SESSION['error6'] = false; endif; 
+
+                                // Pas de nom
+                                if(isset($_SESSION['error7']) && $_SESSION['error7'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, vous devez saisir un username.</div>
+                                    <?php $_SESSION['error7'] = false; endif; 
 
                             ?>
 

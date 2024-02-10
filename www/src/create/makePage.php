@@ -23,9 +23,10 @@
     $_SESSION['error4'] = false;
     $_SESSION['error5'] = false;
     $_SESSION['error6'] = false;
+    $_SESSION['error7'] = false;
 
 
-    var_dump($_SESSION['links']);
+    //var_dump($_SESSION['links']);
     $username = $_SESSION['userNameInput'];
 
     $target_dir = "../../website/".$username."/"; // Dossier où l'image sera chargée
@@ -40,7 +41,12 @@
     // Verification si le nom existe deja
 
 
-    
+    if($username === ''){
+      $_SESSION['error7'] = true;
+    }
+    if($links === null){
+      $_SESSION['error8'] = true;
+    }
 
     // SQL
     // Verifie si il y a une image
@@ -231,7 +237,7 @@ $PHPREDIRECTcontent .= "?>\n";
 
 
 
-  if($_SESSION['error0'] || $_SESSION['error1'] || $_SESSION['error2'] || $_SESSION['error3'] || $_SESSION['error4'] || $_SESSION['error5'] || $_SESSION['error6']){
+  if($_SESSION['error0'] || $_SESSION['error1'] || $_SESSION['error2'] || $_SESSION['error3'] || $_SESSION['error4'] || $_SESSION['error5'] || $_SESSION['error6'] || $_SESSION['error7']){
     
     // Vérifier si le dossier existe
     header("Location: create-2website.php");
@@ -268,20 +274,8 @@ $PHPREDIRECTcontent .= "?>\n";
 
     // Création du fichier JS de la personne
     file_put_contents("../../website/".$username."/script.js", $JScontent);
-    /*
-    $to = 'alexander.gaillard@eduvaud.ch';
-    $subject = 'Le sujet de votre email';
-    $message = 'Bonjour, ceci est un message de test.';
-    $headers = "From: info@securelinks.ch\r\n";
-    $headers .= "Reply-To: alexander.gaillard@eduvaud.ch\r\n";
-    $headers .= "Content-Type: text/plain; charset=utf-8\r\n";
-
-    if(mail($to, $subject, $message, $headers)) {
-        echo 'Email envoyé avec succès.';
-    } else {
-        echo 'Échec de l\'envoi de l\'email.';
-    }*/
 
     header("Location: create-1infos.php");
-  }
+} 
   
+?>
