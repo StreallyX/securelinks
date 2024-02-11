@@ -27,4 +27,3 @@ function handleIntersect(entries, observer) {
     
     observer.observe(section);
   });
-  

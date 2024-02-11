@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $_SESSION['etape'] = 1;
@@ -14,6 +15,7 @@ $_SESSION['etape'] = 1;
     <body>
         <!-- <body> contient le contenu visible de votre page web -->
         <link href="https://fonts.googleapis.com/css?family=Roboto|Work+Sans:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
          <header class="header">
             <nav role="navigation">
             <h1 id="NavTitle">SecureLinks</h1>
@@ -50,51 +52,56 @@ $_SESSION['etape'] = 1;
 
                                 // Gestion d'erreur
 
+                                
+                                // Pas de fichier
 
+                                if(isset($_SESSION['error0']) && $_SESSION['error0'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Aucun fichier enregistrer.</div>
+                                    <?php $_SESSION['error0'] = false; endif; ?>
+                                <?php 
                                 // Fichier trop volumineux
-                                if(isset($_SESSION['error1'])){
-                                    if($_SESSION['error1'] === true){
-                                        echo "Fichier trop volumineux";
-                                        $_SESSION['error1'] === false;
-                                    }
-                                }
+                                if(isset($_SESSION['error1']) && $_SESSION['error1'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Fichier trop volumineux.</div>
+                                    <?php $_SESSION['error1'] = false; endif; 
                                 // Le Fichier n'est pas une image
-                                if(isset($_SESSION['error2'])){
-                                    if($_SESSION['error2'] === true){
-                                        echo "Le Fichier n'est pas une image";
-                                        $_SESSION['error2'] === false;
-                                    }
-                                }
+                                
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error2']) && $_SESSION['error2'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Le Fichier n'est pas une image.</div>
+                                    <?php $_SESSION['error2'] = false; endif; 
                                 // Désolé, le fichier existe déjà
-                                if(isset($_SESSION['error3'])){
-                                    if($_SESSION['error3'] === true){
-                                        echo "Désolé, le fichier existe déjà";
-                                        $_SESSION['error3'] === false;
-                                    }
-                                }
+                                
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error3']) && $_SESSION['error3'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, le fichier existe déjà.</div>
+                                    <?php $_SESSION['error3'] = false; endif; 
                                 // Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.
-                                if(isset($_SESSION['error4'])){
-                                    if($_SESSION['error4'] === true){
-                                        echo "Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés";
-                                        $_SESSION['error4'] === false;
-                                    }
-                                }
+                             
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error4']) && $_SESSION['error4'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.</div>
+                                    <?php $_SESSION['error4'] = false; endif; 
                                 // Désolé, votre fichier n'a pas été chargé.
-                                if(isset($_SESSION['error5'])){
-                                    if($_SESSION['error5'] === true){
-                                        echo "Désolé, votre fichier n'a pas été chargé";
-                                        $_SESSION['error5'] === false;
-                                    }
-                                }
+
+                            
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error5']) && $_SESSION['error5'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, votre fichier n'a pas été chargé.</div>
+                                    <?php $_SESSION['error5'] = false; endif;
                                 // Désolé, il y a eu une erreur lors du chargement de votre fichier
-                                if(isset($_SESSION['error6'])){
-                                    if($_SESSION['error6'] === true){
-                                        echo "Désolé, il y a eu une erreur lors du chargement de votre fichier";
-                                        $_SESSION['error6'] === false;
-                                    }
-                                }
+                             
+                                // Fichier trop volumineux
+                                if(isset($_SESSION['error6']) && $_SESSION['error6'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, il y a eu une erreur lors du chargement de votre fichier.</div>
+                                    <?php $_SESSION['error6'] = false; endif; 
+
+                                // Pas de nom
+                                if(isset($_SESSION['error7']) && $_SESSION['error7'] === true) : ?>
+                                    <div class="error-message" ><i class="fa fa-exclamation-triangle"></i>Désolé, vous devez saisir un username.</div>
+                                    <?php $_SESSION['error7'] = false; endif; 
 
                             ?>
+
                             <input type="file" name="fileToUpload" id="fileToUpload">
 
                             <h2>Choose your color</h2>
@@ -243,6 +250,13 @@ $_SESSION['etape'] = 1;
                 reader.readAsDataURL(this.files[0]);
             }
         });
+        setTimeout(function() {
+            const errors = document.querySelectorAll('.error-message');
+            errors.forEach(function(error) {
+                error.style.opacity = '0';
+                setTimeout(function() { error.style.display = 'none'; }, 600);
+            });
+        }, 5000); // Les messages disparaîtront après 5 secondes
 
 
         </script>

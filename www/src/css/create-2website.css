@@ -1,3 +1,4 @@
+
 .presentation {
     margin: 0 auto;
     width: 300px; /* Largeur du téléphone */
@@ -132,4 +133,61 @@
     }
 
     /* Autres ajustements pour le responsive ... */
+}
+
+/* Style du formulaire */
+form {
+    background-color: #000; /* Fond noir */
+    color: #fff; /* Texte blanc */
+    padding: 20px; /* Espacement interne */
+    border-radius: 8px; /* Bords arrondis */
+}
+
+/* Style des titres dans le formulaire */
+h1, h2 {
+    color: #ffd700; /* Couleur des titres */
+}
+
+/* Style des inputs et des boutons */
+input[type="text"], input[type="url"], input[type="file"], input[type="submit"], .btn-add, .btn-remove {
+    background-color: #333; /* Fond plus sombre */
+    border: none; /* Pas de bordure */
+    color: #fff; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    margin-top: 5px; /* Espacement externe */
+    border-radius: 5px; /* Bords arrondis */
+    width: calc(100% - 22px); /* Largeur ajustée */
+    box-sizing: border-box; /* Comprend padding dans la largeur */
+}
+input[type="color"] {
+    background-color: #000; /* Fond orangé */
+    cursor: pointer; /* Curseur pointeur */
+}
+
+/* Style spécifique pour le bouton de soumission */
+input[type="submit"] {
+    background-color: #ff4500; /* Fond orangé */
+    cursor: pointer; /* Curseur pointeur */
+}
+
+/* Style des boutons + et - */
+.btn-add, .btn-remove {
+    cursor: pointer; /* Curseur pointeur */
+    display: inline-block; /* Affichage en ligne */
+    width: auto; /* Largeur automatique */
+}
+
+/* Style des messages d'erreur */
+.error-message {
+    background-color: #ff0000; /* Fond rouge */
+    color: #fff; /* Texte blanc */
+    padding: 10px; /* Espacement interne */
+    margin-top: 5px; /* Espacement externe */
+    border-radius: 5px; /* Bords arrondis */
+    display: flex; /* Affichage flex pour aligner icône et texte */
+    align-items: center; /* Centre verticalement le contenu */
+}
+
+.error-message i {
+    margin-right: 10px; /* Espacement entre icône et texte */
 }

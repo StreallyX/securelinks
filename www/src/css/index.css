@@ -1,21 +1,14 @@
+
 /* Styles de base pour les écrans de grande taille */
 .hidden {
     visibility: hidden;
     opacity: 0;
-    transform: translateX(100%); /* Commence à droite */
      /* Ajustez selon le besoin */
 }
-.right{
-    transform: translateX(100%);
-}
-.left{
-    transform: translateX(-100%);
-}
 .visible {
-    transition: all 1s;
+    transition: all 2s;
     visibility: visible;
     opacity: 1;
-    transform: translateX(0); /* Revient à la position initiale */
 }
 section{
     display: grid;
@@ -58,7 +51,7 @@ section{
 
 .content-contain-title h1 {
     font-size: 500%;
-    color: white;
+    color: black;
 }
 
 .content-stuff {
@@ -101,6 +94,9 @@ section{
     }
     .content-stuff img {
         border:none;
+    }
+    .content-contain-title h1 {
+    display: none;
     }
 }
 

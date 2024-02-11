@@ -1,75 +1,95 @@
-.visually-hidden {
-    position: absolute;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    border-width: 0;
-}
-
-.pseudo-checkbox {
-    display: block;
-    padding: 10px;
-    border: 2px solid transparent;
-    cursor: pointer;
-}
-
-.pseudo-checkbox .checkbox-display {
-    display: inline-block;
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    background-color: #fff;
-    border: 1px solid #000;
-}
-
-
-.tarif:hover .pseudo-checkbox, .tarif.selected .pseudo-checkbox {
-    border-color: #007bff; /* Bordure pour indiquer la sélection */
-}
-
-.selected {
-    border-color: #007bff; /* Bordure pour indiquer la sélection */
-    border-style:solid;
-    border-width: 2px;
-}
 
 .tarifs-container {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
     gap: 20px;
-    align-items: center; /* Centrer horizontalement */
-    justify-content: center; /* Centrer verticalement */
-    text-align: center; /* Centrer le texte à l'intérieur des éléments */
-}
-
-
-
-.tarif {
-    border: 1px solid #ccc;
     padding: 20px;
+}    
+/* Base styling */
+.tarif {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    width: 25%;
+    border: solid black;
+    color:black;
 }
 
-.price {
+.tarif h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.tarif .price {
+    font-weight: bold;
+    color: #333;
+}
+
+.tarif ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tarif ul li {
+    margin: 10px 0;
+}
+
+.tarif-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
     font-weight: bold;
 }
 
-#total-price {
-    font-size: 24px;
-    font-weight: bold;
+/* Color coding for packages */
+.tarif:before {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 60px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: -20px;
+    left: 20px;
 }
 
-#conditions-check {
-    margin-top: 20px;
-}
-.content{
-
-    margin-bottom: 200px;
+/* Silver Package */
+.silver:before {
+    background-color: #C0C0C0;
 }
 
+.silver h2 {
+    color: #C0C0C0;
+}
+
+/* Gold Package */
+.gold:before {
+    background-color: #FFD700;
+}
+
+.gold h2 {
+    color: #FFD700;
+}
+
+/* Platinum Package */
+.platinum:before {
+    background-color: #E5E4E2;
+}
+
+.platinum h2 {
+    color: #E5E4E2;
+}
+
+.tarif-button-selected {
+    background-color: #28a745; /* Une couleur différente pour indiquer la sélection */
+    color: white;
+}
 
 
 

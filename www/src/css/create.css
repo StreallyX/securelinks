@@ -35,14 +35,16 @@
 .custom-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: blue;
+    background-color: #0056B3 ;
     color: white;
     text-decoration: none;
-    border: none;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-width: 3px;
+    border-color: #FFC107;
+    border-style: solid;
 }
 
 /* Au survol, on change la couleur du bouton */
@@ -117,7 +119,16 @@
     flex-direction: column; /* Organisation des éléments enfants verticalement */
     justify-content: center; /* Centrage vertical des éléments enfants */
     align-items: center; /* Centrage horizontal des éléments enfants */
-    width: 50%; /* Chaque div prend 50% de la largeur */
+    width: 30%; /* Chaque div prend 50% de la largeur */
+    text-align: center; /* Centrage du texte à l'intérieur */
+}
+
+.content-text2 {
+    display: flex; /* Utilisation de Flexbox pour les enfants */
+    flex-direction: column; /* Organisation des éléments enfants verticalement */
+    justify-content: center; /* Centrage vertical des éléments enfants */
+    align-items: center; /* Centrage horizontal des éléments enfants */
+    width: 70%; /* Chaque div prend 50% de la largeur */
     text-align: center; /* Centrage du texte à l'intérieur */
 }
 
@@ -140,4 +151,22 @@
 
 
     /* Autres ajustements pour le responsive ... */
+}
+
+.textcontent{
+    display: flex;
+    flex-direction: row;
+}
+
+.or{
+    background-color: grey;
+    color: white;
+    padding: 5px;
+    text-align: center;
+    margin:auto 20px;
+    border-radius: 20%;
+    
+}
+.or h2{
+    margin:0px;
 }

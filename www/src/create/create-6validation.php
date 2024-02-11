@@ -32,6 +32,7 @@ session_start(); // Démarrer la session
         </header> 
         <!-- Content -->
         <div class="content">
+            <?php var_dump($_SESSION['package']); ?>
             <h1>Confirmation de Paiement</h1>
             <p>Nous vous remercions pour votre achat ! Votre paiement a été effectué avec succès.</p>
 

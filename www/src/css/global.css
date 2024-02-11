@@ -11,12 +11,12 @@ body {
   color: #333;*/
   width: 100%;
   min-height: 100vh;
-  background: linear-gradient(to bottom, #3498db, #9b59b6, #e74c3c);
+  background-color: #F0F8FF;
 /* Le dégradé va du bleu (#3498db) au violet (#9b59b6) au rouge (#e74c3c) */
 background-repeat: no-repeat;
 background-attachment: fixed;
 /* Assurez-vous que le dégradé couvre tout l'arrière-plan */
-color: #ffffff; /* Texte en blanc pour une meilleure lisibilité */
+color: black; /* Texte en blanc pour une meilleure lisibilité */
 }
 
 
@@ -34,7 +34,7 @@ color: white;
 margin: 0;
 }
 nav{
-background-color: #1E1E23;
+background-color: #007BFF  ;
 height: 65px;
 }
 nav a {
@@ -241,7 +241,7 @@ font-weight: bold;
 margin-top: auto;
 height: 75px;
 bottom: 0;
-background-color: #333;
+background-color: #007BFF;
 color: #fff;
 padding: 5px;
 display: flex;

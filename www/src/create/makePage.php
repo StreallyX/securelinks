@@ -1,3 +1,4 @@
+
 <?php
     // Récupération forms website
     session_start(); // Démarrer la session
@@ -15,16 +16,17 @@
       // Traitement des liens
       $_SESSION['links'] = $_POST['links'];
     }
-
+    $_SESSION['error0'] = false;
     $_SESSION['error1'] = false;
     $_SESSION['error2'] = false;
     $_SESSION['error3'] = false;
     $_SESSION['error4'] = false;
     $_SESSION['error5'] = false;
     $_SESSION['error6'] = false;
+    $_SESSION['error7'] = false;
 
 
-    var_dump($_SESSION['links']);
+    //var_dump($_SESSION['links']);
     $username = $_SESSION['userNameInput'];
 
     $target_dir = "../../website/".$username."/"; // Dossier où l'image sera chargée
@@ -38,24 +40,37 @@
 
     // Verification si le nom existe deja
 
+
+    if($username === ''){
+      $_SESSION['error7'] = true;
+    }
+    if($links === null){
+      $_SESSION['error8'] = true;
+    }
+
     // SQL
-
-
+    // Verifie si il y a une image
+      if($_FILES["fileToUpload"]['name'] === ''){
+        echo "pas de fichier";
+        $_SESSION['error0'] = true;
+      }
     // Vérifie la taille du fichier
     if ($_FILES["fileToUpload"]["size"] > 500000) {
       $_SESSION['error1'] = true;
       echo "Désolé, votre fichier est trop volumineux.";
       $uploadOk = 0;
-      header("Location: create-2website.php");
-    }else{
-      // Création du dossier au nom de la personne
-      mkdir("../../website/".$username."/");
-
     }
 
 // Vérifie si le fichier image est une image réelle ou une fausse image
 if(isset($_POST["submit"])) {
-  $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+
+  if($_FILES['fileToUpload']['name'] !== ''){
+    $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
+  }
+  else{
+    $check = false;
+  }
+  
   if($check !== false) {
     echo "Le fichier est une image - " . $check["mime"] . ".";
     $uploadOk = 1;
@@ -70,7 +85,6 @@ if(isset($_POST["submit"])) {
 if (file_exists($target_file)) {
   $_SESSION['error3'] = true;
   echo "Désolé, le fichier existe déjà.";
-  header("Location: create-2website.php");
   $uploadOk = 0;
 }
 
@@ -81,25 +95,10 @@ if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg
 && $imageFileType != "gif" ) {
   $_SESSION['error4'] = true;
   echo "Désolé, seuls les fichiers JPG, JPEG, PNG & GIF sont autorisés.";
-  header("Location: create-2website.php");
   $uploadOk = 0;
 }
 
-// Vérifie si $uploadOk est mis à 0 par une erreur
-if ($uploadOk == 0) {
-  $_SESSION['error5'] = true;
-  echo "Désolé, votre fichier n'a pas été chargé.";
-  header("Location: create-2website.php");
-// Si tout est ok, essaie de charger le fichier
-} else {
-  if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-    echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été chargé.";
-  } else {
-    $_SESSION['error6'] = true;
-    echo "Désolé, il y a eu une erreur lors du chargement de votre fichier.";
-    header("Location: create-2website.php");
-  }
-}
+
 
 
 
@@ -235,21 +234,48 @@ $PHPREDIRECTcontent .= "  header(\"Location: error.php\");\n";
 $PHPREDIRECTcontent .= "}\n";
 $PHPREDIRECTcontent .= "?>\n";
 
-// Utilisez cette chaîne pour créer ou mettre à jour le fichier redirect.php
-file_put_contents("../../website/" . $username . "/redirect.php", $PHPREDIRECTcontent);
-
-
-// Création de la page PHP de la personne
-file_put_contents("../../website/".$username."/index.php", $PHPcontent);
-
-// Création du fichier CSS de la personne
-file_put_contents("../../website/".$username."/style.css", $CSScontent);
-
-// Création du fichier JS de la personne
-file_put_contents("../../website/".$username."/script.js", $JScontent);
 
 
 
-header("Location: create-1infos.php");
+  if($_SESSION['error0'] || $_SESSION['error1'] || $_SESSION['error2'] || $_SESSION['error3'] || $_SESSION['error4'] || $_SESSION['error5'] || $_SESSION['error6'] || $_SESSION['error7']){
+    
+    // Vérifier si le dossier existe
+    header("Location: create-2website.php");
 
+  }else{
+
+    // Vérifie si $uploadOk est mis à 0 par une erreur
+    if ($uploadOk == 0) {
+      $_SESSION['error5'] = true;
+      echo "Désolé, votre fichier n'a pas été chargé.";
+      header("Location: create-2website.php");
+    // Si tout est ok, essaie de charger le fichier
+    } else {
+      mkdir("../../website/".$username."/");
+      if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+        echo "Le fichier ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " a été chargé.";
+      } else {
+        $_SESSION['error6'] = true;
+        rmdir("../../website/".$username."/");
+        echo "Désolé, il y a eu une erreur lors du chargement de votre fichier.";
+        header("Location: create-2website.php");
+      }
+    }
+    
+
+    // Utilisez cette chaîne pour créer ou mettre à jour le fichier redirect.php
+    file_put_contents("../../website/" . $username . "/redirect.php", $PHPREDIRECTcontent);
+
+    // Création de la page PHP de la personne
+    file_put_contents("../../website/".$username."/index.php", $PHPcontent);
+
+    // Création du fichier CSS de la personne
+    file_put_contents("../../website/".$username."/style.css", $CSScontent);
+
+    // Création du fichier JS de la personne
+    file_put_contents("../../website/".$username."/script.js", $JScontent);
+
+    header("Location: create-1infos.php");
+} 
+  
 ?>

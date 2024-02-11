@@ -28,54 +28,50 @@
     </header>
     <div class="content">
         <div class="tarifs-container">
-            <!-- Free Website Option -->
-            <div class="tarif">
-                <h2>Get a Free Website</h2>
-                <p class="price">Free</p>
-                <p>Start your online presence with a free website. Choose from a variety of templates to quickly launch your site.</p>
-                <p>Cost-effective way to establish an online presence, user-friendly templates for easy setup.</p>
-                <a href="create.php" class="tarif-button">Create</a>
-            </div>
-
-            <!-- Website Security Option -->
-            <div class="tarif">
-                <h2>Secure Your Website</h2>
-                <p class="price">$7.99/month</p>
-                <p>Continuous protection for your website from insta bots, including regular updates and security monitoring.</p>
-                <p>Peace of mind with enhanced security, protection against instagram bann.</p>
+            <!-- Silver Package -->
+            <div class="tarif silver">
+                <h2>Silver Package</h2>
+                <p class="price">7.99 CHF/month</p>
+                <ul>
+                    <li>✅ Site Web</li>
+                    <li>✅ Secured Website</li>
+                    <li>❌ SEO Optimization</li>
+                    <li>❌ Data Analysis</li>
+                    <li>❌ Website Customization</li>
+                </ul>
+                <p>Secure and establish your online presence with a website and continuous protection against threats.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
 
-            <!-- SEO Optimization Option -->
-            <!--
-            <div class="tarif">
-                <h2>SEO Optimization</h2>
-                <p class="price">$2.99/month</p>
-                <p>Improve your website's visibility on search engines to attract more traffic and potential customers.</p>
-                <p>Higher search engine rankings, increased organic traffic, and improved online visibility.</p>
+            <!-- Gold Package -->
+            <div class="tarif gold">
+                <h2>Gold Package</h2>
+                <p class="price">14.99 CHF/month</p>
+                <ul>
+                    <li>✅ Site Web</li>
+                    <li>✅ Secured Website</li>
+                    <li>✅ SEO Optimization</li>
+                    <li>✅ Data Analysis</li>
+                    <li>❌ Website Customization</li>
+                </ul>
+                <p>Enhance your site with SEO optimization and data analysis for better visibility and insights.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
-            -->
-            <!-- Data Analysis Option -->
-            <!--
-            <div class="tarif">
-                <h2>Data Analysis</h2>
-                <p class="price">$4.99/month</p>
-                <p>Get detailed insights on your website's traffic and user behavior to make informed decisions.</p>
-                <p>Better understanding of audience behavior, data-driven strategies for website improvement.</p>
+
+            <!-- Platinum Package -->
+            <div class="tarif platinum">
+                <h2>Platinum Package</h2>
+                <p class="price">49.99 CHF/month</p>
+                <ul>
+                    <li>✅ Site Web</li>
+                    <li>✅ Secured Website</li>
+                    <li>✅ SEO Optimization</li>
+                    <li>✅ Data Analysis</li>
+                    <li>✅ Website Customization</li>
+                </ul>
+                <p>The ultimate package offering full access to website customization for a unique and professional online presence.</p>
                 <a href="contact.php" class="tarif-button">Learn More</a>
             </div>
-            -->
-            <!-- Advanced Website Customization Option -->
-            <!--
-            <div class="tarif">
-                <h2>Advanced Website Customization</h2>
-                <p class="price">$29.99/month</p>
-                <p>Tailor your website with advanced customization options for a unique and professional online presence.</p>
-                <p>Unique website design, enhanced user experience, alignment with specific brand needs.</p>
-                <a href="contact.php" class="tarif-button">Learn More</a>
-            </div>
-            -->
          </div>
     </div>
 

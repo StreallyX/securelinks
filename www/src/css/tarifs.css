@@ -7,29 +7,35 @@
     padding: 20px;
 }
 
+/* Base styling */
 .tarif {
-    border: 5px solid black;
+    border: 1px solid #ddd;
     border-radius: 8px;
     padding: 20px;
-    width: 300px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    background-color: rgb(22, 22, 22);
+    margin-bottom: 20px;
+    background-color: #F8F9FA;
+    width: 30%;
+    border: solid black;
+    color:black;
 }
 
 .tarif h2 {
-    color: white;
-    margin-bottom: 10px;
+    margin-top: 0;
+    color: #333;
 }
 
-.price {
-    font-size: 1.5em;
-    color: white;
-    margin-bottom: 15px;
+.tarif .price {
+    font-weight: bold;
+    color: #333;
 }
 
-.tarif p {
-    margin-bottom: 15px;
+.tarif ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.tarif ul li {
+    margin: 10px 0;
 }
 
 .tarif-button {
@@ -38,12 +44,47 @@
     color: white;
     padding: 10px 20px;
     text-decoration: none;
-    border-radius: 4px;
-    transition: background-color 0.2s ease;
+    border-radius: 5px;
+    font-weight: bold;
 }
 
-.tarif-button:hover {
-    background-color: #0056b3;
+/* Color coding for packages */
+.tarif:before {
+    content: '';
+    display: block;
+    height: 20px;
+    width: 60px;
+    border-radius: 10px 10px 0 0;
+    position: relative;
+    top: -20px;
+    left: 20px;
+}
+
+/* Silver Package */
+.silver:before {
+    background-color: #C0C0C0;
+}
+
+.silver h2 {
+    color: #C0C0C0;
+}
+
+/* Gold Package */
+.gold:before {
+    background-color: #FFD700;
+}
+
+.gold h2 {
+    color: #FFD700;
+}
+
+/* Platinum Package */
+.platinum:before {
+    background-color: #E5E4E2;
+}
+
+.platinum h2 {
+    color: #E5E4E2;
 }
 
 @media screen and (max-width: 768px) {
