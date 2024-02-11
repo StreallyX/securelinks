@@ -62,3 +62,11 @@ button:hover {
         margin: 20px;
     }
 }
+
+select{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}

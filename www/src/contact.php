@@ -28,29 +28,42 @@
         </header>
         <div class="content">
             <div class="form-container">
-                <form id="contactForm" action="sendcontact.php" method="post">
-                    <div class="form-group">
-                        <label for="firstname">First Name</label>
-                        <input type="text" id="firstname" name="firstname" required>
-                    </div>
+            <form id="contactForm" action="sendcontact.php" method="post">
+                <div class="form-group">
+                    <label for="firstname">First Name</label>
+                    <input type="text" id="firstname" name="firstname" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="lastname">Last Name</label>
-                        <input type="text" id="lastname" name="lastname" required>
-                    </div>
+                <div class="form-group">
+                    <label for="lastname">Last Name</label>
+                    <input type="text" id="lastname" name="lastname" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
 
-                    <div class="form-group">
-                        <label for="message">Your Request</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
+                <!-- Subject of Contact Dropdown -->
+                <div class="form-group">
+                    <label for="contactSubject">Subject of Contact</label>
+                    <select id="contactSubject" name="contactSubject" required>
+                        <option value="">Please select</option>
+                        <option value="addition">Addition</option>
+                        <option value="modification">Modification</option>
+                        <option value="pageIssue">Page Issue</option>
+                        <option value="linkIssue">Link Issue</option>
+                        <!-- Add other subjects as needed -->
+                    </select>
+                </div>
 
-                    <button type="submit">Send</button>
-                </form>
+                <div class="form-group">
+                    <label for="message">Your Request</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit">Send</button>
+            </form>
             </div>
         </div>
     
