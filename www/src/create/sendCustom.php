@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 
     // Requête SQL
-    $sql = "INSERT INTO t_contact (idContact, conSurname, conLastname, conMail, conMessage) VALUES (NULL, '{$_POST['firstname']}', '{$_POST['lastname']}', '{$_POST['email']}', '{$_POST['message']}', '{$_POST['contactSubject']}');";
+    $sql = "INSERT INTO t_contact (idContact, conSurname, conLastname, conMail, conMessage) VALUES (NULL, '{$_POST['firstname']}', '{$_POST['lastname']}', '{$_POST['email']}', '{$_POST['message']}');";
 
     // Exécution de la requête SQL
     $resultat = mysqli_query($connexion, $sql);
@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Pour fermer la connexion lorsque vous avez fini, utilisez :
     mysqli_close($connexion);
 
-    header("Location: contact.php");
+    header("Location: validateCustom.php");
 
 }
 

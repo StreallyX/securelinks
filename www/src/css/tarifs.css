@@ -1,103 +1,85 @@
-
-.tarifs-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
+.content h2{
+    font-size: 32px;
+    padding: 50px 0px;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
 }
-
-/* Base styling */
-.tarif {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    background-color: #F8F9FA;
-    width: 30%;
-    border: solid black;
-    color:black;
+.price-row{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 25px;
 }
-
-.tarif h2 {
-    margin-top: 0;
-    color: #333;
+.price-col{
+    background: rgba(0, 86, 179, 0.9)  ;
+    padding: 10% 15%;
+    border-radius: 10px;
+    color: #fff;
+    text-align: center;
+    transition: scale 0.3s;
 }
-
-.tarif .price {
-    font-weight: bold;
-    color: #333;
+.price-col:hover{
+ scale: 1.1;
 }
-
-.tarif ul {
-    list-style-type: none;
-    padding: 0;
+.price-col p{
+    font-size: 22px;
 }
-
-.tarif ul li {
-    margin: 10px 0;
+.price-col h3{
+    font-size: 44px;
+    margin: 20px 0px 40px;
+    font-weight: 500;
 }
-
-.tarif-button {
-    display: inline-block;
-    background-color: #007bff;
-    color: white;
-    padding: 10px 20px;
+.month{
+    font-size: 16px;
     text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
+}
+.price-col ul{
+    text-align: left;
+    margin: 20px 0;
+    color: #ddd;
+    list-style: none;
+}
+.price-col ul li{
+    margin: 15px 0;
+}
+.price-col button{
+    width: 100%;
+    padding: 14px 0;
+    background: transparent;
+    color: white;
+    font-size: 15px;
+    border: 1px solid white;
+    border-radius: 6px;
+    margin-top: 30px;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+    bottom: 5px;
+}
+.price-col button:hover{
+    background-color: white;
+    color: black;
+}
+.Premium{
+    border-width: 3px;
+    border-color: #FFC107;
+    border-style: solid;
+}
+.Premium p{
+    color : #FFC107;
 }
 
-/* Color coding for packages */
-.tarif:before {
-    content: '';
+.Sales h4{
+    margin: 0;
+    background-color: red;
+    border-radius: 10px;
+    padding: 4px;
     display: block;
-    height: 20px;
-    width: 60px;
-    border-radius: 10px 10px 0 0;
-    position: relative;
-    top: -20px;
-    left: 20px;
 }
-
-/* Silver Package */
-.silver:before {
-    background-color: #C0C0C0;
+h4 {
+    display: none;
 }
-
-.silver h2 {
-    color: #C0C0C0;
-}
-
-/* Gold Package */
-.gold:before {
-    background-color: #FFD700;
-}
-
-.gold h2 {
-    color: #FFD700;
-}
-
-/* Platinum Package */
-.platinum:before {
-    background-color: #E5E4E2;
-}
-
-.platinum h2 {
-    color: #E5E4E2;
-}
-
-@media screen and (max-width: 768px) {
-    .tarifs-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .tarif {
-        border-radius: 8px;
-        padding: 20px;
-        width: 80%;
-        text-align: center;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    }
+.Sales .Price{
+    text-decoration: line-through;
 }

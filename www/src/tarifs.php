@@ -27,11 +27,12 @@
           </nav>
     </header>
     <div class="content">
-        <div class="tarifs-container">
-            <!-- Silver Package -->
-            <div class="tarif silver">
-                <h2>Silver Package</h2>
-                <p class="price">7.99 CHF/month</p>
+    <h2>Choose your plan</h2>
+        <div class="price-row">
+            <div class="price-col">
+                <h4>Sales ??%</h4>
+                <p>Starter</p>
+                <h3><span class="Price">7.99</span><span class="month">CHF/ month</span></h3>
                 <ul>
                     <li>✅ Site Web</li>
                     <li>✅ Secured Website</li>
@@ -39,14 +40,12 @@
                     <li>❌ Data Analysis</li>
                     <li>❌ Website Customization</li>
                 </ul>
-                <p>Secure and establish your online presence with a website and continuous protection against threats.</p>
-                <a href="contact.php" class="tarif-button">Learn More</a>
+                <button>Add To Cart</button>
             </div>
-
-            <!-- Gold Package -->
-            <div class="tarif gold">
-                <h2>Gold Package</h2>
-                <p class="price">14.99 CHF/month</p>
+            <div class="price-col Sales">
+                <h4>Sales 25%</h4>
+                <p>Advanced</p>
+                <h3>14.99<span class="month"><span class="Price">19.99</span>CHF/ month</span></h3>
                 <ul>
                     <li>✅ Site Web</li>
                     <li>✅ Secured Website</li>
@@ -54,14 +53,12 @@
                     <li>✅ Data Analysis</li>
                     <li>❌ Website Customization</li>
                 </ul>
-                <p>Enhance your site with SEO optimization and data analysis for better visibility and insights.</p>
-                <a href="contact.php" class="tarif-button">Learn More</a>
+                <button>Add To Cart</button>
             </div>
-
-            <!-- Platinum Package -->
-            <div class="tarif platinum">
-                <h2>Platinum Package</h2>
-                <p class="price">49.99 CHF/month</p>
+            <div class="price-col Premium">
+                <h4>Sales ??%</h4>
+                <p>Premium</p>
+                <h3><span class="Price">49.99</span><span class="month">CHF/ month</span></h3>
                 <ul>
                     <li>✅ Site Web</li>
                     <li>✅ Secured Website</li>
@@ -69,12 +66,10 @@
                     <li>✅ Data Analysis</li>
                     <li>✅ Website Customization</li>
                 </ul>
-                <p>The ultimate package offering full access to website customization for a unique and professional online presence.</p>
-                <a href="contact.php" class="tarif-button">Learn More</a>
+                <button>Add To Cart</button>
             </div>
-         </div>
+        </div>
     </div>
-
     <footer class="footer">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <div class="contact-info">

@@ -43,7 +43,7 @@
                         <div>
                             <h1>Get a custom website</h1>
                             <p>For 39.99$/per month your dream website will be created </p>
-                            <a class="custom-button" href="create/create-2website.php">Create</a>
+                            <a class="custom-button" href="create/custom.php">Create</a>
 
                         </div>
                     </div>
